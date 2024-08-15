@@ -1,5 +1,6 @@
 import 'package:aquaalert/app/routes/app_routes.dart';
 import 'package:aquaalert/features/auth/presentation/pages/login_page.dart';
+import 'package:aquaalert/features/home/presentation/pages/home_page.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -9,6 +10,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.login,
       page: () => const LoginPage(),
+    ),
+    GetPage(
+      name: AppRoutes.home,
+      page: () => const HomePage(),
     ),
   ];
 }
