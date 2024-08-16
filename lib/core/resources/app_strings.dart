@@ -11,4 +11,9 @@ class AppStrings {
   static const litresPerMin = "litres/min";
   static const waterRunning = "Water Running";
   static const litres = "Litres";
+  static const home = "Home";
+  static const activities = "Activities";
+  static const nemo = "Nemo";
+  static const history = "History";
+  static const profile = "Profile";
 }

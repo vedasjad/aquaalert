@@ -76,6 +76,7 @@ class SizeConfig {
   static final double width_30 = 30.w;
   static final double width_32 = 32.w;
   static final double width_34 = 34.w;
+  static final double width_35 = 35.w;
   static final double width_36 = 36.w;
   static final double width_38 = 38.w;
   static final double width_40 = 40.w;
@@ -84,6 +85,8 @@ class SizeConfig {
   static final double width_46 = 46.w;
   static final double width_48 = 48.w;
   static final double width_50 = 50.w;
+  static final double width_60 = 60.w;
+  static final double width_70 = 70.w;
 
   // Radius
   static final double radius_2 = 2.r;
