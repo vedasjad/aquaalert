@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class StageBinding extends Bindings {
   StageBinding({
-    this.initialIndex = 0,
+    this.initialIndex = 1,
   });
   final int initialIndex;
   @override

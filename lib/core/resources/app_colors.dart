@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   AppColors._();
+  static const bathroom = Color(0xff3291ec);
   static const black = Colors.black;
   static const brightAmber = Color(0xffFAA719);
   static const charcoal = Color(0xff323232);
   static const coolGrey = Color(0xff878790);
   static const darkGrey = Color(0xff444444);
   static const deepViolet = Color(0xff312064);
+  static const garage = Color(0xff9d52f3);
+  static const kitchen = Color(0xff77b4f3);
+  static const laundry = Color(0xff26aba4);
   static const lavenderGray = Color(0xffcac5d1);
   static const navyBlue = Color(0xff032D60);
   static const offWhite = Color(0xffEDEDED);

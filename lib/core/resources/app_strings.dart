@@ -16,4 +16,7 @@ class AppStrings {
   static const nemo = "Nemo";
   static const history = "History";
   static const profile = "Profile";
+  static const bathroom = "Bathroom";
+  static const laundry = "Laundry";
+  static const garage = "Garage";
 }

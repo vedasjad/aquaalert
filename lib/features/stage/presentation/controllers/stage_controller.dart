@@ -1,7 +1,6 @@
 import 'package:aquaalert/core/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../../app/configs/size_config.dart';
 import '../../../../core/resources/app_strings.dart';
@@ -19,7 +18,7 @@ class StageController extends GetxController {
   final int initialIndex;
   final screens = [
     const HomePage(),
-    const ActivitiesPage(),
+    ActivitiesPage(),
     const NemoPage(),
     const HistoryPage(),
     const ProfilePage(),
@@ -115,10 +114,6 @@ class StageController extends GetxController {
     selectedBNBIndex = initialIndex.obs;
     super.onInit();
   }
-
-  final PersistentTabController tabController = PersistentTabController(
-    initialIndex: 0,
-  );
 
   void updateSelectedBNBIndex(int index) {
     selectedBNBIndex.value = index;
