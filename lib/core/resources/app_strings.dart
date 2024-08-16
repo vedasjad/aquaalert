@@ -2,6 +2,9 @@ class AppStrings {
   static const leakageDetected = "Leakage detected";
   static const kitchen = "Kitchen";
   static const daily = "Daily";
+  static const day = "Day";
+  static const week = "Week";
+  static const month = "Month";
   static const weekly = "Weekly";
   static const monthly = "Monthly";
   static const bimonthly = "Bimonthly";
@@ -19,4 +22,14 @@ class AppStrings {
   static const bathroom = "Bathroom";
   static const laundry = "Laundry";
   static const garage = "Garage";
+  static const monthlyProgress = "Monthly progress";
+  static String monthlyProgressStatement(int percentage) {
+    return "On average, this month you used $percentage% less\nwater than previous month";
+  }
+
+  static const thisMonth = "This month";
+  static const previousMonth = "Previous month";
+  static const ltrsPerDay = "Ltrs/day";
+  static const goalStreak = "Goal streak";
+  static daysInARow(int days) => "$days days in a row";
 }

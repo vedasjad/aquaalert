@@ -176,7 +176,7 @@ class UsageChartWidget extends StatelessWidget {
           barRods: [
             BarChartRodData(
               toY: point.y.toDouble(),
-              color: Colors.blue,
+              color: AppColors.skyBlue,
               width: SizeConfig.width_24,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(

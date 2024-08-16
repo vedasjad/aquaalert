@@ -117,5 +117,6 @@ class StageController extends GetxController {
 
   void updateSelectedBNBIndex(int index) {
     selectedBNBIndex.value = index;
+    update();
   }
 }

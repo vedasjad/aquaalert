@@ -48,6 +48,16 @@ class AppTextStyles {
     fontWeight: bold,
   );
 
+  static TextStyle lexendExtraLargeMedium = _lexendBase(
+    fontSize: _defaultFontSize * 1.25,
+    fontWeight: medium,
+  );
+
+  static TextStyle lexendExtraLargeRegular = _lexendBase(
+    fontSize: _defaultFontSize * 1.25,
+    fontWeight: regular,
+  );
+
   static TextStyle lexendLargeMedium = _lexendBase(
     fontSize: _defaultFontSize * 1.125,
     fontWeight: medium,

@@ -60,6 +60,7 @@ class SizeConfig {
   static final double height_50 = 50.h;
 
   static final double width_2 = 2.w;
+  static final double width_3 = 3.w;
   static final double width_4 = 4.w;
   static final double width_6 = 6.w;
   static final double width_8 = 8.w;

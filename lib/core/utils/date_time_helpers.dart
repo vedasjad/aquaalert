@@ -20,3 +20,11 @@ String formatDateFromDateTime(DateTime dateTime) {
   // Combine both date and time
   return formattedDate;
 }
+
+String formatMonthFromDateTime(DateTime dateTime) {
+  // Format the date in '2 May 2024' format
+  String formattedDate = DateFormat('MMMM yyyy').format(dateTime);
+
+  // Combine both date and time
+  return formattedDate;
+}

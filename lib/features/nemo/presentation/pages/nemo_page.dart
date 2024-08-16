@@ -1,10 +1,261 @@
+import 'dart:math';
+
+import 'package:aquaalert/app/configs/size_config.dart';
+import 'package:aquaalert/core/resources/app_colors.dart';
+import 'package:aquaalert/core/resources/app_strings.dart';
+import 'package:aquaalert/core/resources/app_text_styles.dart';
+import 'package:aquaalert/features/nemo/presentation/controllers/nemo_controller.dart';
+import 'package:aquaalert/features/stage/presentation/widgets/notification_icon_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
+
+import '../widgets/periodic_usage_widget/periodic_usage_widget.dart';
 
 class NemoPage extends StatelessWidget {
   const NemoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final NemoController controller = Get.find();
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: AppBar(
+        backgroundColor: AppColors.white,
+        actions: const [
+          NotificationsIconWidget(),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            PeriodicUsageWidget(
+              controller: controller,
+              points: const [
+                Point(1, 250),
+                Point(2, 130),
+                Point(3, 290),
+                Point(4, 45),
+                Point(5, 175),
+                Point(6, 210),
+                Point(7, 85),
+                Point(8, 220),
+                Point(9, 60),
+                Point(10, 140),
+                Point(11, 300),
+                Point(12, 15),
+                Point(13, 260),
+                Point(14, 100),
+                Point(15, 190),
+                Point(16, 270),
+                Point(17, 30),
+                Point(18, 240),
+                Point(19, 90),
+                Point(20, 280),
+                Point(21, 50),
+                Point(22, 160),
+                Point(23, 230),
+                Point(24, 70),
+                Point(25, 200),
+                Point(26, 110),
+                Point(27, 170),
+                Point(28, 250),
+                Point(29, 40),
+                Point(30, 135),
+                Point(31, 285),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: SizeConfig.width_30,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        AppStrings.monthlyProgress,
+                        style: AppTextStyles.lexendExtraLargeRegular,
+                      ),
+                      SizedBox(
+                        height: SizeConfig.height_4,
+                      ),
+                      Text(
+                        AppStrings.monthlyProgressStatement(11),
+                        style: AppTextStyles.lexendNormalRegular,
+                        maxLines: 2,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const MonthlyUsageLinearIndicator(
+                            ltrsPerDay: '226',
+                          ),
+                          SizedBox(
+                            width: SizeConfig.width_50,
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: SizeConfig.width_10,
+                              vertical: SizeConfig.width_4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.black,
+                              borderRadius: BorderRadius.circular(
+                                SizeConfig.radius_4,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Icon(
+                                  Icons.arrow_drop_down,
+                                  color: AppColors.greenAccent,
+                                ),
+                                Text(
+                                  '11%',
+                                  style: AppTextStyles.lexendNormalRegular
+                                      .copyWith(
+                                    color: AppColors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: SizeConfig.width_4,
+                      ),
+                      const MonthlyUsageLinearIndicator(
+                        ltrsPerDay: '251',
+                        isPrevMonth: true,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: SizeConfig.width_8),
+                        padding: EdgeInsets.all(
+                          SizeConfig.width_8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.gunMetal,
+                          borderRadius: BorderRadius.circular(
+                            SizeConfig.radius_6,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  AppStrings.goalStreak,
+                                  style: AppTextStyles.lexendNormalRegular
+                                      .copyWith(
+                                    color: AppColors.white,
+                                  ),
+                                ),
+                                Text(
+                                  AppStrings.daysInARow(10),
+                                  style: AppTextStyles.lexendExtraLargeMedium
+                                      .copyWith(
+                                    color: AppColors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: List.generate(19, (index) {
+                                return Container(
+                                  height: SizeConfig.width_12,
+                                  width: SizeConfig.width_3,
+                                  margin: EdgeInsets.symmetric(
+                                    horizontal: SizeConfig.width_2,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: index % 8 == 0
+                                        ? Colors.transparent
+                                        : index < 7
+                                            ? AppColors.white
+                                            : AppColors.lightSeaGreen,
+                                    borderRadius: BorderRadius.circular(
+                                      SizeConfig.radius_2,
+                                    ),
+                                  ),
+                                );
+                              }),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MonthlyUsageLinearIndicator extends StatelessWidget {
+  const MonthlyUsageLinearIndicator({
+    required this.ltrsPerDay,
+    this.isPrevMonth = false,
+    super.key,
+  });
+  final String ltrsPerDay;
+  final bool isPrevMonth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Text(
+              ltrsPerDay,
+              style: AppTextStyles.lexendExtraLargeBold.copyWith(
+                fontSize: SizeConfig.fontSize_40,
+              ),
+            ),
+            SizedBox(
+              width: SizeConfig.width_4,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppStrings.ltrsPerDay,
+                  style: AppTextStyles.lexendNormalRegular,
+                ),
+                Text(
+                  isPrevMonth ? AppStrings.previousMonth : AppStrings.thisMonth,
+                  style: AppTextStyles.lexendSmallRegular,
+                ),
+              ],
+            )
+          ],
+        ),
+        LinearPercentIndicator(
+          width: MediaQuery.of(context).size.width / 2,
+          animation: true,
+          lineHeight: 10.0,
+          animationDuration: 400,
+          percent: 0.8,
+          barRadius: Radius.circular(
+            SizeConfig.radius_22,
+          ),
+          padding: EdgeInsets.zero,
+          progressColor: AppColors.skyBlue,
+          backgroundColor: AppColors.offWhite,
+        ),
+      ],
+    );
   }
 }
