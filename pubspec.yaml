@@ -36,7 +36,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - assets/images/a.jpg
+    - assets/images/a(1).jpg
+    - assets/images/aqua-alert.jpg
     - assets/icons/
 
   # To add custom fonts to your application, add a fonts section here,
