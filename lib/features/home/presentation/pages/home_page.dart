@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
 import 'package:aquaalert/core/resources/app_strings.dart';
+import 'package:aquaalert/features/history/domain/models/leakage.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/resources/app_colors.dart';
@@ -23,8 +24,14 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const LeakageNotifierWidget(
-              place: AppStrings.kitchen,
+            LeakageNotifierWidget(
+              leakage: Leakage(
+                dateTime: DateTime.now(),
+                amountInLitres: 15,
+                equipment: 'Tap',
+                location: AppStrings.bathroom,
+                reason: 'Left open',
+              ),
             ),
             UsageChartWidget(
               points: List.generate(

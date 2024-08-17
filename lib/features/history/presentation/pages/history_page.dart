@@ -12,7 +12,9 @@ import '../widgets/filter_widget.dart';
 import '../widgets/history_search_bar.dart';
 
 class HistoryPage extends StatelessWidget {
-  const HistoryPage({super.key});
+  const HistoryPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +43,61 @@ class HistoryPage extends StatelessWidget {
             children: [
               HistorySearchBar(controller: controller),
               const FilterWidget(),
-              ...List.generate(controller.leakagePlaces.length, (index) {
+              ...List.generate(controller.leakages.length, (index) {
                 return LeakageNotifierWidget(
-                  place: controller.leakagePlaces[index],
+                  leakage: controller.leakages[index],
                 );
               }),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class LeakageDialogInfoField extends StatelessWidget {
+  const LeakageDialogInfoField({
+    required this.value,
+    required this.label,
+    super.key,
+  });
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        vertical: SizeConfig.width_6,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: AppTextStyles.lexendNormalSemiBold,
+          ),
+          Container(
+            width: SizeConfig.getScreenWidth() / 1.7,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                SizeConfig.radius_8,
+              ),
+              border: Border.all(
+                color: AppColors.offWhite,
+              ),
+            ),
+            margin: EdgeInsets.only(
+              top: SizeConfig.width_6,
+            ),
+            padding: EdgeInsets.all(SizeConfig.width_8),
+            child: Text(
+              value,
+              style: AppTextStyles.lexendNormalRegular,
+            ),
+          )
+        ],
       ),
     );
   }

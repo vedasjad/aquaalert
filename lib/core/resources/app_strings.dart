@@ -24,7 +24,7 @@ class AppStrings {
   static const garage = "Garage";
   static const monthlyProgress = "Monthly progress";
   static String monthlyProgressStatement(int percentage) {
-    return "On average, this month you used $percentage% less\nwater than previous month";
+    return "On average, this month you used $percentage% less water than previous month";
   }
 
   static const thisMonth = "This month";
@@ -34,4 +34,8 @@ class AppStrings {
   static daysInARow(int days) => "$days days in a row";
   static const searchByName = "Search By Name";
   static const filterBy = "Filter by";
+  static const amountLeaked = "Amount leaked";
+  static const timeOfLeakage = "Time of leakage";
+  static const placeOfLeakage = "Place of leakage";
+  static const reasonForLeakage = "Reason for leakage";
 }

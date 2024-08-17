@@ -8,8 +8,8 @@ import 'package:aquaalert/features/nemo/presentation/controllers/nemo_controller
 import 'package:aquaalert/features/stage/presentation/widgets/notification_icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
+import '../widgets/monthly_usage_linear_indicator.dart';
 import '../widgets/periodic_usage_widget/periodic_usage_widget.dart';
 
 class NemoPage extends StatelessWidget {
@@ -83,10 +83,13 @@ class NemoPage extends StatelessWidget {
                       SizedBox(
                         height: SizeConfig.height_4,
                       ),
-                      Text(
-                        AppStrings.monthlyProgressStatement(11),
-                        style: AppTextStyles.lexendNormalRegular,
-                        maxLines: 2,
+                      SizedBox(
+                        width: SizeConfig.getScreenWidth() * 0.75,
+                        child: Text(
+                          AppStrings.monthlyProgressStatement(11),
+                          style: AppTextStyles.lexendNormalRegular,
+                          maxLines: 2,
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -198,64 +201,6 @@ class NemoPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class MonthlyUsageLinearIndicator extends StatelessWidget {
-  const MonthlyUsageLinearIndicator({
-    required this.ltrsPerDay,
-    this.isPrevMonth = false,
-    super.key,
-  });
-  final String ltrsPerDay;
-  final bool isPrevMonth;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(
-              ltrsPerDay,
-              style: AppTextStyles.lexendExtraLargeBold.copyWith(
-                fontSize: SizeConfig.fontSize_40,
-              ),
-            ),
-            SizedBox(
-              width: SizeConfig.width_4,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  AppStrings.ltrsPerDay,
-                  style: AppTextStyles.lexendNormalRegular,
-                ),
-                Text(
-                  isPrevMonth ? AppStrings.previousMonth : AppStrings.thisMonth,
-                  style: AppTextStyles.lexendSmallRegular,
-                ),
-              ],
-            )
-          ],
-        ),
-        LinearPercentIndicator(
-          width: MediaQuery.of(context).size.width / 2,
-          animation: true,
-          lineHeight: 10.0,
-          animationDuration: 400,
-          percent: 0.8,
-          barRadius: Radius.circular(
-            SizeConfig.radius_22,
-          ),
-          padding: EdgeInsets.zero,
-          progressColor: AppColors.skyBlue,
-          backgroundColor: AppColors.offWhite,
-        ),
-      ],
     );
   }
 }

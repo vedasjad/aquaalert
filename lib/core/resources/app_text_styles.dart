@@ -68,6 +68,11 @@ class AppTextStyles {
     fontWeight: regular,
   );
 
+  static TextStyle lexendNormalSemiBold = _lexendBase(
+    fontSize: _defaultFontSize,
+    fontWeight: semiBold,
+  );
+
   static TextStyle lexendSmallRegular = _lexendBase(
     fontSize: _defaultFontSize * 0.875,
     fontWeight: regular,
