@@ -10,16 +10,16 @@ class AppStrings {
   static const weekly = "Weekly";
   static const monthly = "Monthly";
   static const bimonthly = "Bimonthly";
-  static const waterConsumption = "Water Consumption";
-  static const ofDailyAverage = "of Daily Average";
-  static const waterStatus = "Water Status";
-  static const litresPerMin = "litres/min";
+  static const todayWaterUsage = "Today's water usage";
+  static const overHalfway = "You're over halfway through your daily limit.";
+  static const currentWaterFlow = "Current water flow";
+  static const lPerMin = "L/min";
   static const waterRunning = "Water Running";
   static const litres = "Litres";
   static const home = "Home";
-  static const activities = "Activities";
-  static const nemo = "Nemo";
-  static const history = "History";
+  static const myUsage = "My Usage";
+  static const hydra = "Hydra";
+  static const appliances = "Appliances";
   static const profile = "Profile";
   static const bathroom = "Bathroom";
   static const laundry = "Laundry";
@@ -50,4 +50,7 @@ class AppStrings {
   static const helpAndSupport = "Help & Support";
   static const aboutApp = "About App";
   static const more = "More";
+  static const highWaterFlowTip =
+      "Consider reducing your flow rate to save water.";
+  static const running = "Running";
 }

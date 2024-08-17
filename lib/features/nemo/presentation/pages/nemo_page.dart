@@ -20,8 +20,8 @@ class NemoPage extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
-        actions: const [
-          NotificationsIconWidget(),
+        actions: [
+          NotificationsIconWidget(onTap: () {}),
         ],
       ),
       body: SingleChildScrollView(

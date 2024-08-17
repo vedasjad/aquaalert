@@ -39,7 +39,7 @@ class ProfileHeader extends StatelessWidget {
               ),
             ),
             child: Image.asset(
-              AppImages.profileImage,
+              AppIcons.person,
               height: SizeConfig.width_54,
               width: SizeConfig.width_54,
               fit: BoxFit.contain,

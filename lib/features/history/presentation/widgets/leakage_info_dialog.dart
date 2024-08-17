@@ -82,7 +82,7 @@ class LeakageInfoDialog extends StatelessWidget {
                   ),
                   LeakageDialogInfoField(
                     label: AppStrings.placeOfLeakage,
-                    value: leakage.equipment,
+                    value: leakage.appliance,
                   ),
                   LeakageDialogInfoField(
                     label: AppStrings.reasonForLeakage,

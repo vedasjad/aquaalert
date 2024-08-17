@@ -1,6 +1,6 @@
 class Leakage {
   final String location;
-  final String equipment;
+  final String appliance;
   final String reason;
   final DateTime dateTime;
   final int amountInLitres;
@@ -8,7 +8,7 @@ class Leakage {
   Leakage({
     required this.dateTime,
     required this.amountInLitres,
-    required this.equipment,
+    required this.appliance,
     required this.location,
     required this.reason,
   });

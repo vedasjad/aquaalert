@@ -1,9 +1,9 @@
 import 'package:aquaalert/app/configs/size_config.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/features/usage/presentation/widgets/room_wise_usage_pie_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/resources/app_resources.dart';
 import '../widgets/room_wise_usage_line_chart.dart';
-import '../widgets/room_wise_usage_pie_chart.dart';
 
 class ActivitiesPage extends StatelessWidget {
   ActivitiesPage({super.key});

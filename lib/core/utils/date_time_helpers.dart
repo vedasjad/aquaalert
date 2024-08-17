@@ -8,6 +8,11 @@ String formatDateTimeFromISO(String iso8601String) {
 
   // Format the date in '2 May 2024' format
   String formattedDate = DateFormat('d MMMM yyyy').format(dateTime);
+  if (dateTime.day == DateTime.now().day &&
+      dateTime.month == DateTime.now().month &&
+      dateTime.year == DateTime.now().year) {
+    formattedDate = "Today";
+  }
 
   // Combine both date and time
   return '$formattedTime, $formattedDate';

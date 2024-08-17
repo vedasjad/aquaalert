@@ -1,10 +1,8 @@
 import 'package:aquaalert/app/configs/size_config.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
-import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/core/utils/date_time_helpers.dart';
 import 'package:aquaalert/features/history/presentation/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../history/domain/models/leakage.dart';
@@ -41,20 +39,14 @@ class LeakageNotifierWidget extends StatelessWidget {
       },
       child: Container(
         height: SizeConfig.height_64,
+        width: SizeConfig.getScreenWidth() * 0.95,
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.coolGrey.withOpacity(0.2),
-              spreadRadius: 5,
-              blurRadius: 10,
-            )
-          ],
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(
-            SizeConfig.radius_12,
-          ),
-          border: Border.all(
-            color: AppColors.lavenderGray,
+          color: AppColors.redLight,
+          border: BorderDirectional(
+            start: BorderSide(
+              color: AppColors.red,
+              width: SizeConfig.width_6,
+            ),
           ),
         ),
         padding: EdgeInsets.all(
@@ -67,15 +59,6 @@ class LeakageNotifierWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              AppIcons.tap,
-              height: SizeConfig.width_32,
-              width: SizeConfig.width_32,
-              fit: BoxFit.contain,
-            ),
-            SizedBox(
-              width: SizeConfig.width_8,
-            ),
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,21 +70,17 @@ class LeakageNotifierWidget extends StatelessWidget {
                     children: [
                       Text(
                         AppStrings.leakageDetected,
-                        style: AppTextStyles.lexendNormalRegular,
+                        style: AppTextStyles.dmSansSmallRegular,
                       ),
                       Text(
-                        leakage.location,
-                        style: AppTextStyles.lexendSmallRegular,
+                        '${leakage.location}, ${leakage.appliance}',
+                        style: AppTextStyles.dmSansNormalSemiBold,
                       ),
                     ],
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        "",
-                        style: AppTextStyles.lexendExtraSmallRegular,
-                      ),
                       Text(
                         formatDateTimeFromISO(
                           DateTime.now()
@@ -109,8 +88,10 @@ class LeakageNotifierWidget extends StatelessWidget {
                                 const Duration(hours: 1),
                               )
                               .toIso8601String(),
+                        ).replaceFirst(',', ' • '),
+                        style: AppTextStyles.dmSansSmallRegular.copyWith(
+                          color: AppColors.greyDavy,
                         ),
-                        style: AppTextStyles.lexendExtraSmallRegular,
                       ),
                     ],
                   ),

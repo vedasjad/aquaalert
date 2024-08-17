@@ -133,6 +133,11 @@ class AppTextStyles {
     fontWeight: regular,
   );
 
+  static TextStyle dmSansSmallSemiBold = _dmSansBase(
+    fontSize: _defaultFontSize * 0.875,
+    fontWeight: semiBold,
+  );
+
   static TextStyle dmSansSmallBold = _dmSansBase(
     fontSize: _defaultFontSize * 0.875,
     fontWeight: bold,

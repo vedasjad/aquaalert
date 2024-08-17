@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 
 import '../../../../app/configs/size_config.dart';
 import '../../../../core/resources/resources.dart';
-import '../../../activities/presentation/pages/activities_page.dart';
 import '../../../history/presentation/pages/history_page.dart';
 import '../../../home/presentation/pages/home_page.dart';
 import '../../../nemo/presentation/pages/nemo_page.dart';
 import '../../../profile/presentation/pages/profile_page.dart';
+import '../../../usage//presentation/pages/activities_page.dart';
 
 class StageController extends GetxController {
   StageController({
@@ -26,82 +26,76 @@ class StageController extends GetxController {
   final tabItems = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
       icon: Image.asset(
-        AppIcons.homeBlack,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.homeInactive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.home,
       activeIcon: Image.asset(
-        AppIcons.homeAmber,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.homeActive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
-        AppIcons.activitiesBlack,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.usageInactive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
-      label: AppStrings.activities,
+      label: AppStrings.myUsage,
       activeIcon: Image.asset(
-        AppIcons.activitiesAmber,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.usageActive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
-      icon: SizedBox(
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+      icon: Image.asset(
+        AppIcons.hydraInactive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
+        fit: BoxFit.contain,
       ),
-      label: AppStrings.nemo,
+      label: AppStrings.hydra,
       activeIcon: SizedBox(
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
-        AppIcons.clockBlack,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.appliancesInactive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
-      label: AppStrings.history,
+      label: AppStrings.appliances,
       activeIcon: Image.asset(
-        AppIcons.clockAmber,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.appliancesActive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
-        AppImages.profileImage,
-        height: SizeConfig.width_16,
-        width: SizeConfig.width_16,
+        AppIcons.profileInactive,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.profile,
-      activeIcon: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: AppColors.brightAmber,
-            width: 1.5,
-          ),
-        ),
-        child: Image.asset(
-          AppImages.profileImage,
-          height: SizeConfig.width_16,
-          width: SizeConfig.width_16,
-          fit: BoxFit.contain,
-        ),
+      activeIcon: Image.asset(
+        AppIcons.profileInactive,
+        color: AppColors.skyBlue,
+        height: SizeConfig.width_24,
+        width: SizeConfig.width_24,
+        fit: BoxFit.contain,
       ),
     ),
   ];

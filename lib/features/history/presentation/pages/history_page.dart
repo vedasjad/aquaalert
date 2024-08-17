@@ -22,13 +22,15 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         title: Text(
-          AppStrings.history,
+          AppStrings.appliances,
           style: AppTextStyles.lexendExtraLargeSemiBold.copyWith(
             color: AppColors.navyBlue,
           ),
         ),
-        actions: const [
-          NotificationsIconWidget(),
+        actions: [
+          NotificationsIconWidget(
+            onTap: () {},
+          ),
         ],
       ),
       body: SingleChildScrollView(

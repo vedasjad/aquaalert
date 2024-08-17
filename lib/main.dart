@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
               textScaler: const TextScaler.linear(1.0),
             ),
             child: Scaffold(
-              backgroundColor: AppColors.white,
+              backgroundColor: AppColors.whitePure,
               body: SafeArea(
                 child: child!,
               ),
