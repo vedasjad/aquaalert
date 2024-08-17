@@ -1,7 +1,7 @@
-import 'package:aquaalert/core/resources/app_strings.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/resources/app_resources.dart';
 import '../../domain/models/leakage.dart';
 
 class HistoryController extends GetxController {

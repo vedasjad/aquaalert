@@ -1,14 +1,11 @@
 import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
-import 'package:aquaalert/core/resources/app_colors.dart';
-import 'package:aquaalert/core/resources/app_text_styles.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/features/home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
 import 'package:aquaalert/features/home/presentation/widgets/usage_chart_widget/widgets/usage_period_select_button.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/resources/app_strings.dart';
 
 class UsageChartWidget extends StatelessWidget {
   const UsageChartWidget({

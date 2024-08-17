@@ -1,5 +1,4 @@
-import 'package:aquaalert/core/resources/app_colors.dart';
-import 'package:aquaalert/core/resources/app_text_styles.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 
 class SideTitleTextWidget extends StatelessWidget {

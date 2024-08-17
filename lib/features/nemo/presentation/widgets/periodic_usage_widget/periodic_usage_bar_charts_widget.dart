@@ -1,12 +1,11 @@
 import 'dart:math';
 
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/features/nemo/presentation/widgets/periodic_usage_widget/periodic_usage_bar_charts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../app/configs/size_config.dart';
-import '../../../../../core/resources/app_colors.dart';
-import '../../../../../core/resources/app_text_styles.dart';
 import '../../../../../core/utils/date_time_helpers.dart';
 import '../../controllers/nemo_controller.dart';
 

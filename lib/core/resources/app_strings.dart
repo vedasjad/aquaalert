@@ -1,3 +1,5 @@
+part of 'app_resources.dart';
+
 class AppStrings {
   static const leakageDetected = "Leakage detected";
   static const kitchen = "Kitchen";
@@ -38,4 +40,14 @@ class AppStrings {
   static const timeOfLeakage = "Time of leakage";
   static const placeOfLeakage = "Place of leakage";
   static const reasonForLeakage = "Reason for leakage";
+  static const myAccount = "My Account";
+  static const myAccountDescription = "Make changes to your account";
+  static const twoFactorAuth = "Two-Factor Authentication";
+  static const twoFactorAuthDescription =
+      "Further secure your account for safety";
+  static const logout = "Logout";
+  static const logoutDescription = "Further secure your account for safety";
+  static const helpAndSupport = "Help & Support";
+  static const aboutApp = "About App";
+  static const more = "More";
 }

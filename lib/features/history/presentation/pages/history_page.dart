@@ -1,11 +1,9 @@
 import 'package:aquaalert/app/configs/size_config.dart';
-import 'package:aquaalert/core/resources/app_colors.dart';
-import 'package:aquaalert/core/resources/app_strings.dart';
-import 'package:aquaalert/core/resources/app_text_styles.dart';
 import 'package:aquaalert/features/history/presentation/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/resources/app_resources.dart';
 import '../../../home/presentation/widgets/leakage_notifier_widget.dart';
 import '../../../stage/presentation/widgets/notification_icon_widget.dart';
 import '../widgets/filter_widget.dart';
@@ -25,7 +23,7 @@ class HistoryPage extends StatelessWidget {
         backgroundColor: AppColors.white,
         title: Text(
           AppStrings.history,
-          style: AppTextStyles.lexendExtraLargeBold.copyWith(
+          style: AppTextStyles.lexendExtraLargeSemiBold.copyWith(
             color: AppColors.navyBlue,
           ),
         ),

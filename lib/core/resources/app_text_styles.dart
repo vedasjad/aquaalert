@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of 'app_resources.dart';
 
 class AppTextStyles {
   AppTextStyles._();
@@ -46,6 +44,11 @@ class AppTextStyles {
   static TextStyle lexendExtraLargeBold = _lexendBase(
     fontSize: _defaultFontSize * 1.25,
     fontWeight: bold,
+  );
+
+  static TextStyle lexendExtraLargeSemiBold = _lexendBase(
+    fontSize: _defaultFontSize * 1.25,
+    fontWeight: semiBold,
   );
 
   static TextStyle lexendExtraLargeMedium = _lexendBase(
@@ -100,6 +103,11 @@ class AppTextStyles {
     fontWeight: bold,
   );
 
+  static TextStyle dmSansLargeBold = _dmSansBase(
+    fontSize: _defaultFontSize * 1.125,
+    fontWeight: bold,
+  );
+
   static TextStyle dmSansLargeMedium = _dmSansBase(
     fontSize: _defaultFontSize * 1.125,
     fontWeight: medium,
@@ -108,6 +116,11 @@ class AppTextStyles {
   static TextStyle dmSansNormalRegular = _dmSansBase(
     fontSize: _defaultFontSize,
     fontWeight: regular,
+  );
+
+  static TextStyle dmSansNormalSemiBold = _dmSansBase(
+    fontSize: _defaultFontSize,
+    fontWeight: semiBold,
   );
 
   static TextStyle dmSansNormalBold = _dmSansBase(

@@ -1,6 +1,5 @@
 import 'package:aquaalert/app/configs/size_config.dart';
-import 'package:aquaalert/core/resources/app_strings.dart';
-import 'package:aquaalert/core/resources/app_text_styles.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/core/utils/date_time_helpers.dart';
 import 'package:aquaalert/features/history/presentation/controllers/history_controller.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/resources/app_colors.dart';
 import '../../../history/domain/models/leakage.dart';
 import '../../../history/presentation/widgets/leakage_info_dialog.dart';
 

@@ -1,8 +1,8 @@
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../app/configs/size_config.dart';
-import '../../../../core/resources/app_colors.dart';
 import '../../../../core/resources/resources.dart';
 
 class NotificationsIconWidget extends StatelessWidget {

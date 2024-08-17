@@ -1,10 +1,10 @@
 import 'dart:math';
 
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../app/configs/size_config.dart';
-import '../../../../../core/resources/app_colors.dart';
 import '../../../../home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
 import '../../controllers/nemo_controller.dart';
 

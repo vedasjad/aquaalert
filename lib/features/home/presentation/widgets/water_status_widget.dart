@@ -1,11 +1,9 @@
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 import '../../../../app/configs/size_config.dart';
-import '../../../../core/resources/app_colors.dart';
-import '../../../../core/resources/app_strings.dart';
-import '../../../../core/resources/app_text_styles.dart';
 
 class WaterStatusWidget extends StatelessWidget {
   const WaterStatusWidget({

@@ -1,5 +1,5 @@
 import 'package:aquaalert/core/models/tabs/my_tab.dart';
-import 'package:aquaalert/core/resources/app_strings.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,9 +1,8 @@
-import 'package:aquaalert/core/resources/app_colors.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../app/configs/size_config.dart';
-import '../../../../core/resources/app_strings.dart';
 import '../../../../core/resources/resources.dart';
 import '../../../activities/presentation/pages/activities_page.dart';
 import '../../../history/presentation/pages/history_page.dart';

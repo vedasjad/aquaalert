@@ -1,7 +1,8 @@
 import 'package:aquaalert/app/configs/size_config.dart';
-import 'package:aquaalert/core/resources/app_text_styles.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/resources/app_resources.dart';
 
 class Sector {
   final double value;

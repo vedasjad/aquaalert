@@ -1,11 +1,10 @@
 import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
-import 'package:aquaalert/core/resources/app_strings.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/features/history/domain/models/leakage.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/resources/app_colors.dart';
 import '../widgets/leakage_notifier_widget.dart';
 import '../widgets/usage_chart_widget/usage_chart_widget.dart';
 import '../widgets/water_consumption_widget.dart';

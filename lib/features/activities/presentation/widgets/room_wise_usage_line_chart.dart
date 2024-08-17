@@ -3,8 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/configs/size_config.dart';
-import '../../../../core/resources/app_colors.dart';
-import '../../../../core/resources/app_text_styles.dart';
+import '../../../../core/resources/app_resources.dart';
 import '../../../home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
 
 class RoomWiseUsageLineChart extends StatelessWidget {
