@@ -58,6 +58,7 @@ class SizeConfig {
   static final double height_46 = 46.h;
   static final double height_48 = 48.h;
   static final double height_50 = 50.h;
+  static final double height_64 = 64.h;
 
   static final double width_2 = 2.w;
   static final double width_3 = 3.w;
@@ -89,6 +90,7 @@ class SizeConfig {
   static final double width_60 = 60.w;
   static final double width_70 = 70.w;
   static final double width_100 = 100.w;
+  static final double width_115 = 115.w;
   static final double width_120 = 120.w;
   static final double width_140 = 140.w;
   static final double width_150 = 150.w;

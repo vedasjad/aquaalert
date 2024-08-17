@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
+import 'package:aquaalert/core/resources/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/resources/app_colors.dart';
@@ -22,7 +23,9 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const LeakageNotifierWidget(),
+            const LeakageNotifierWidget(
+              place: AppStrings.kitchen,
+            ),
             UsageChartWidget(
               points: List.generate(
                 8,

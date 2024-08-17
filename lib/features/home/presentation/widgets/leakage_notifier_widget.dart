@@ -11,13 +11,24 @@ import '../../../../core/resources/app_colors.dart';
 class LeakageNotifierWidget extends StatelessWidget {
   const LeakageNotifierWidget({
     super.key,
+    required this.place,
   });
+
+  final String place;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: SizeConfig.height_64,
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.coolGrey.withOpacity(0.2),
+            spreadRadius: 5,
+            blurRadius: 10,
+          )
+        ],
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(
           SizeConfig.radius_12,
         ),
@@ -46,18 +57,20 @@ class LeakageNotifierWidget extends StatelessWidget {
           ),
           Expanded(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       AppStrings.leakageDetected,
-                      style: AppTextStyles.lexendSmallRegular,
+                      style: AppTextStyles.lexendNormalRegular,
                     ),
                     Text(
-                      AppStrings.kitchen,
-                      style: AppTextStyles.lexendExtraSmallRegular,
+                      place,
+                      style: AppTextStyles.lexendSmallRegular,
                     ),
                   ],
                 ),
@@ -66,7 +79,7 @@ class LeakageNotifierWidget extends StatelessWidget {
                   children: [
                     Text(
                       "",
-                      style: AppTextStyles.lexendSmallRegular,
+                      style: AppTextStyles.lexendExtraSmallRegular,
                     ),
                     Text(
                       formatDateTimeFromISO(

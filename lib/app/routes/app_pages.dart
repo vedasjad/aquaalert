@@ -1,5 +1,6 @@
 import 'package:aquaalert/app/routes/app_routes.dart';
 import 'package:aquaalert/features/auth/presentation/pages/login_page.dart';
+import 'package:aquaalert/features/history/presentation/bindings/history_binding.dart';
 import 'package:aquaalert/features/nemo/presentation/bindings/nemo_binding.dart';
 import 'package:aquaalert/features/stage/presentation/pages/stage_page.dart';
 import 'package:get/get.dart';
@@ -20,6 +21,7 @@ class AppPages {
       bindings: [
         StageBinding(),
         NemoBinding(),
+        HistoryBinding(),
       ],
     ),
   ];

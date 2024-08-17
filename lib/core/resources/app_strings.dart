@@ -32,4 +32,6 @@ class AppStrings {
   static const ltrsPerDay = "Ltrs/day";
   static const goalStreak = "Goal streak";
   static daysInARow(int days) => "$days days in a row";
+  static const searchByName = "Search By Name";
+  static const filterBy = "Filter by";
 }

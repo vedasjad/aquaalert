@@ -8,7 +8,10 @@ class AppIcons {
   static const String bell = 'assets/icons/bell.svg';
   static const String clockAmber = 'assets/icons/clock_amber.png';
   static const String clockBlack = 'assets/icons/clock_black.png';
+  static const String filter = 'assets/icons/filter.png';
   static const String homeAmber = 'assets/icons/home_amber.png';
   static const String homeBlack = 'assets/icons/home_black.png';
+  static const String search = 'assets/icons/search.png';
   static const String tap = 'assets/icons/tap.svg';
+  static const String tapLeakage = 'assets/icons/tap_leakage.png';
 }

@@ -10,8 +10,11 @@ void main() {
     expect(File(AppIcons.bell).existsSync(), isTrue);
     expect(File(AppIcons.clockAmber).existsSync(), isTrue);
     expect(File(AppIcons.clockBlack).existsSync(), isTrue);
+    expect(File(AppIcons.filter).existsSync(), isTrue);
     expect(File(AppIcons.homeAmber).existsSync(), isTrue);
     expect(File(AppIcons.homeBlack).existsSync(), isTrue);
+    expect(File(AppIcons.search).existsSync(), isTrue);
     expect(File(AppIcons.tap).existsSync(), isTrue);
+    expect(File(AppIcons.tapLeakage).existsSync(), isTrue);
   });
 }

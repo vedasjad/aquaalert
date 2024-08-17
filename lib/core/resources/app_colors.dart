@@ -22,6 +22,7 @@ class AppColors {
   static const oxfordBlue = Color(0xff001639);
   static const paleCornflowerBlue = Color(0xff9BC3FE);
   static const paleBlue = Color(0xffEEF4FF);
+  static const red = Colors.redAccent;
   static const skyBlue = Color(0xff57A3FD);
   static const slate500 = Color(0xff64748B);
   static const white = Color(0xffffffff);
