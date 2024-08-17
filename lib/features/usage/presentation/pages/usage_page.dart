@@ -42,7 +42,7 @@ class UsagePage extends StatelessWidget {
         backgroundColor: AppColors.whitePure,
         surfaceTintColor: AppColors.whitePure,
         title: Text(
-          "My Usage",
+          AppStrings.myUsage,
           style: AppTextStyles.dmSansLargeBold.copyWith(
             color: AppColors.black,
           ),

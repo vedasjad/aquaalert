@@ -54,4 +54,9 @@ class AppStrings {
       "Consider reducing your flow rate to save water.";
   static const running = "Running";
   static const totalConsumption = 'Total consumption';
+  static const indoor = "Indoor";
+  static const outdoor = "Outdoor";
+  static const add = "Add";
+  static const usageStats = "Usage Statistics";
+  static const alerts = "Alerts";
 }

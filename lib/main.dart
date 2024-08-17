@@ -2,6 +2,7 @@ import 'package:aquaalert/app/binding/app_binding.dart';
 import 'package:aquaalert/app/configs/app_config.dart';
 import 'package:aquaalert/app/routes/app_pages.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/features/appliances/appliances_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   AuthModule().init();
+  AppliancesModule().init();
   runApp(const MyApp());
 }
 

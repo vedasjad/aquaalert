@@ -15,7 +15,8 @@ class ProfileSettingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      color: AppColors.whitePure,
       padding: EdgeInsets.symmetric(
         vertical: SizeConfig.width_8,
       ),
@@ -44,7 +45,7 @@ class ProfileSettingTile extends StatelessWidget {
             if (attributes.hasWarning == true)
               Positioned(
                 right: 0,
-                top: SizeConfig.width_10,
+                top: SizeConfig.width_4,
                 child: Image.asset(
                   AppIcons.warning,
                   height: SizeConfig.width_14,

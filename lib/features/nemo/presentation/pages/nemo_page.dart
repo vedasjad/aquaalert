@@ -18,9 +18,9 @@ class NemoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final NemoController controller = Get.find();
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.offWhite,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.whitePure,
         actions: [
           IconWidget(
             iconPath: AppIcons.bell,
@@ -100,7 +100,7 @@ class NemoPage extends StatelessWidget {
                             ltrsPerDay: '226',
                           ),
                           SizedBox(
-                            width: SizeConfig.width_50,
+                            width: SizeConfig.width_46,
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(

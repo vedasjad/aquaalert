@@ -32,7 +32,7 @@ class PeriodicUsageBarChartsWidget extends StatelessWidget {
           vertical: SizeConfig.width_8,
         ),
         decoration: BoxDecoration(
-          color: AppColors.lightGray,
+          color: AppColors.whitePure,
           borderRadius: BorderRadius.circular(
             SizeConfig.radius_14,
           ),

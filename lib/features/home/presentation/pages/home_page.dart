@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
-import 'package:aquaalert/features/history/domain/models/leakage.dart';
+import 'package:aquaalert/features/appliances/domain/models/leakage.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/leakage_notifier_widget.dart';

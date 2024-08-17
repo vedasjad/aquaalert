@@ -1,12 +1,9 @@
 import 'package:aquaalert/app/configs/size_config.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/utils/date_time_helpers.dart';
-import 'package:aquaalert/features/history/presentation/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../history/domain/models/leakage.dart';
-import '../../../history/presentation/widgets/leakage_info_dialog.dart';
+import '../../../appliances/domain/models/leakage.dart';
 
 class LeakageNotifierWidget extends StatelessWidget {
   const LeakageNotifierWidget({
@@ -16,27 +13,10 @@ class LeakageNotifierWidget extends StatelessWidget {
 
   final Leakage leakage;
 
-  void _showDialog({required BuildContext context, required Leakage leakage}) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return LeakageInfoDialog(
-          leakage: leakage,
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final HistoryController controller = Get.find();
     return GestureDetector(
-      onTap: () {
-        _showDialog(
-          context: context,
-          leakage: controller.leakages.first,
-        );
-      },
+      onTap: () {},
       child: Container(
         height: SizeConfig.height_64,
         width: SizeConfig.getScreenWidth() * 0.95,

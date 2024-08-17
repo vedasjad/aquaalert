@@ -12,9 +12,9 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.offWhite,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.whitePure,
         title: Text(
           AppStrings.profile,
           style: AppTextStyles.lexendExtraLargeSemiBold.copyWith(

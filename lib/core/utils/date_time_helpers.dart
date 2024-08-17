@@ -18,6 +18,14 @@ String formatDateTimeFromISO(String iso8601String) {
   return '$formattedTime, $formattedDate';
 }
 
+String formatTimeFromDateTime(DateTime dateTime) {
+  // Format the time in 12-hour format with AM/PM
+  String formattedTime = DateFormat('h:mm a').format(dateTime);
+
+  // Combine both date and time
+  return formattedTime;
+}
+
 String formatDateFromDateTime(DateTime dateTime) {
   // Format the date in '2 May 2024' format
   String formattedDate = DateFormat('d MMMM yyyy').format(dateTime);

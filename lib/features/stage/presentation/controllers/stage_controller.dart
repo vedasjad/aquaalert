@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../app/configs/size_config.dart';
 import '../../../../core/resources/resources.dart';
-import '../../../history/presentation/pages/history_page.dart';
+import '../../../appliances/presentation/pages/appliances_page.dart';
 import '../../../home/presentation/pages/home_page.dart';
 import '../../../nemo/presentation/pages/nemo_page.dart';
 import '../../../profile/presentation/pages/profile_page.dart';
@@ -19,7 +19,7 @@ class StageController extends GetxController {
     const HomePage(),
     UsagePage(),
     const NemoPage(),
-    const HistoryPage(),
+    const AppliancesPage(),
     const ProfilePage(),
   ];
 
