@@ -53,4 +53,5 @@ class AppStrings {
   static const highWaterFlowTip =
       "Consider reducing your flow rate to save water.";
   static const running = "Running";
+  static const totalConsumption = 'Total consumption';
 }

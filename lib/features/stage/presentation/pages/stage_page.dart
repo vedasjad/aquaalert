@@ -1,4 +1,5 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/core/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,7 @@ class StagePage extends StatelessWidget {
     return Obx(() {
       return Scaffold(
         backgroundColor: AppColors.whitePure,
-        appBar: (controller.selectedBNBIndex.value < 2) ? buildAppBar() : null,
+        appBar: (controller.selectedBNBIndex.value < 1) ? buildAppBar() : null,
         bottomNavigationBar: CustomBottomNavigationBar(
           controller: controller,
         ),
@@ -35,7 +36,8 @@ class StagePage extends StatelessWidget {
         ),
       ),
       actions: [
-        NotificationsIconWidget(
+        IconWidget(
+          iconPath: AppIcons.bell,
           onTap: () {},
         ),
       ],

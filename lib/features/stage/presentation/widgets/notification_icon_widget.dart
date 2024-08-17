@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/configs/size_config.dart';
-import '../../../../core/resources/resources.dart';
 
-class NotificationsIconWidget extends StatelessWidget {
-  const NotificationsIconWidget({
+class IconWidget extends StatelessWidget {
+  const IconWidget({
     required this.onTap,
+    required this.iconPath,
     super.key,
   });
   final VoidCallback onTap;
+  final String iconPath;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class NotificationsIconWidget extends StatelessWidget {
             height: SizeConfig.width_38,
             width: SizeConfig.width_38,
             child: Image.asset(
-              AppIcons.bell,
+              iconPath,
               height: SizeConfig.width_16,
               width: SizeConfig.width_16,
               fit: BoxFit.contain,

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:aquaalert/app/configs/size_config.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/features/nemo/presentation/controllers/nemo_controller.dart';
 import 'package:aquaalert/features/stage/presentation/widgets/notification_icon_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,10 @@ class NemoPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         actions: [
-          NotificationsIconWidget(onTap: () {}),
+          IconWidget(
+            iconPath: AppIcons.bell,
+            onTap: () {},
+          ),
         ],
       ),
       body: SingleChildScrollView(

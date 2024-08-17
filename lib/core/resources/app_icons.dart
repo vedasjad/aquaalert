@@ -18,6 +18,7 @@ class AppIcons {
   static const String hydraInactive = 'assets/icons/hydra_inactive.png';
   static const String info = 'assets/icons/info.png';
   static const String logout = 'assets/icons/logout.png';
+  static const String meatballsMenu = 'assets/icons/meatballs_menu.png';
   static const String person = 'assets/icons/person.png';
   static const String profileInactive = 'assets/icons/profile_inactive.png';
   static const String search = 'assets/icons/search.png';

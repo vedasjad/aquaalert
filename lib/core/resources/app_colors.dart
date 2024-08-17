@@ -14,12 +14,12 @@ class AppColors {
   static const darkGrey = Color(0xff444444);
   static const deepViolet = Color(0xff312064);
   static const deepBlush = Color(0xffFE7269);
-  static const garage = Color(0xff9d52f3);
+  static const garage = Color(0xff3DCA65);
   static const greenAccent = Color(0xff47EF44);
   static const greyDavy = Color(0xff525252);
   static const gunMetal = Color(0xff1E293B);
   static const kitchen = Color(0xff77b4f3);
-  static const laundry = Color(0xff26aba4);
+  static const laundry = Color(0xffFFA84A);
   static const lavenderGray = Color(0xffcac5d1);
   static const lightGray = Color(0xfff1f5f9);
   static const lightSeaGreen = Color(0xff1DAC92);

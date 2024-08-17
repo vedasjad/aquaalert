@@ -19,6 +19,7 @@ void main() {
     expect(File(AppIcons.hydraInactive).existsSync(), isTrue);
     expect(File(AppIcons.info).existsSync(), isTrue);
     expect(File(AppIcons.logout).existsSync(), isTrue);
+    expect(File(AppIcons.meatballsMenu).existsSync(), isTrue);
     expect(File(AppIcons.person).existsSync(), isTrue);
     expect(File(AppIcons.profileInactive).existsSync(), isTrue);
     expect(File(AppIcons.search).existsSync(), isTrue);

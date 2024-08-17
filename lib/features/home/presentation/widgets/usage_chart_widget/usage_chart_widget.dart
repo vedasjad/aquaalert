@@ -5,7 +5,8 @@ import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/features/home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../my_drop_down_button.dart';
 
 class UsageChartWidget extends StatelessWidget {
   const UsageChartWidget({
@@ -35,29 +36,10 @@ class UsageChartWidget extends StatelessWidget {
       color: AppColors.whitePure,
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                  right: SizeConfig.width_8,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      AppStrings.daily,
-                      style: AppTextStyles.dmSansNormalSemiBold.copyWith(
-                        color: AppColors.greyDavy,
-                      ),
-                    ),
-                    Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColors.greyDavy,
-                      size: 25.sp,
-                    )
-                  ],
-                ),
-              )
+              MyDropDownButton(),
             ],
           ),
           SizedBox(

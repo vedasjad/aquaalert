@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                 8,
                 (index) => Point(
                   index,
-                  index == 0 ? 150 : index * 71.5,
+                  Random().nextDouble() * 100,
                 ),
               ),
             ),

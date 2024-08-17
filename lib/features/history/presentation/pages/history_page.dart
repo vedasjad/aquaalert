@@ -1,4 +1,5 @@
 import 'package:aquaalert/app/configs/size_config.dart';
+import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/features/history/presentation/controllers/history_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,8 @@ class HistoryPage extends StatelessWidget {
           ),
         ),
         actions: [
-          NotificationsIconWidget(
+          IconWidget(
+            iconPath: AppIcons.bell,
             onTap: () {},
           ),
         ],

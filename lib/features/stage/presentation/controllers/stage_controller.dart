@@ -8,7 +8,7 @@ import '../../../history/presentation/pages/history_page.dart';
 import '../../../home/presentation/pages/home_page.dart';
 import '../../../nemo/presentation/pages/nemo_page.dart';
 import '../../../profile/presentation/pages/profile_page.dart';
-import '../../../usage//presentation/pages/activities_page.dart';
+import '../../../usage//presentation/pages/usage_page.dart';
 
 class StageController extends GetxController {
   StageController({
@@ -17,7 +17,7 @@ class StageController extends GetxController {
   final int initialIndex;
   final screens = [
     const HomePage(),
-    ActivitiesPage(),
+    UsagePage(),
     const NemoPage(),
     const HistoryPage(),
     const ProfilePage(),
