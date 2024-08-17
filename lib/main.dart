@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             ),
           );
         },
-        initialRoute: AppRoutes.stage,
+        initialRoute: AppRoutes.splash,
         getPages: AppPages.pages,
         initialBinding: AppBinding(),
         debugShowCheckedModeBanner: false,

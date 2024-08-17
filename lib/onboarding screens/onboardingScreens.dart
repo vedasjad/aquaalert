@@ -1,20 +1,10 @@
+import 'package:aquaalert/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: SplashScreen(),
-    );
-  }
-}
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +44,8 @@ class SplashScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -78,10 +69,7 @@ class SplashScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LoginScreen()),
-                      );
+                      Get.offAllNamed(AppRoutes.stage);
                     },
                     child: Container(
                       width: 327,
@@ -90,7 +78,8 @@ class SplashScreen extends StatelessWidget {
                       decoration: ShapeDecoration(
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          side: const BorderSide(width: 1, color: Color(0xFF396AFC)),
+                          side: const BorderSide(
+                              width: 1, color: Color(0xFF396AFC)),
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
@@ -290,7 +279,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LocationSetupScreen()),
+                                builder: (context) =>
+                                    const LocationSetupScreen()),
                           );
                         }
                       : null,
@@ -318,7 +308,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const LoginScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
                       );
                     },
                     child: const Text.rich(
@@ -451,7 +442,8 @@ class _LocationSetupScreenState extends State<LocationSetupScreen> {
                     onPressed: () {
                       // Implement location fetching logic here
                     },
-                    icon: const Icon(Icons.location_on, color: Color(0xFF396AFC)),
+                    icon:
+                        const Icon(Icons.location_on, color: Color(0xFF396AFC)),
                     label: const Text(
                       'Use my current location',
                       style: TextStyle(
@@ -976,13 +968,7 @@ class _AppliancesSelectedScreenState extends State<AppliancesSelectedScreen>
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        SplashScreen(), // Replace with your SplashScreen widget
-                  ),
-                );
+                Get.offAllNamed(AppRoutes.stage);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF396AFC), // Button color
