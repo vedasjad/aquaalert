@@ -24,9 +24,7 @@ class MyLogger {
 
   void i(dynamic message, [dynamic error, StackTrace? stackTrace]) {
     if (!kDebugMode) return;
-    logger.i(
-      message,
-    );
+    logger.i(message);
   }
 
   void w(dynamic message, [dynamic error, StackTrace? stackTrace]) {

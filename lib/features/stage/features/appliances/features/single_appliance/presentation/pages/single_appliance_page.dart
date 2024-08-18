@@ -17,7 +17,7 @@ class SingleAppliancePage extends StatefulWidget {
     super.key,
   });
 
-  final ApplianceAttributes attributes;
+  final OperationalAppliance attributes;
 
   @override
   State<SingleAppliancePage> createState() => _SingleAppliancePageState();
@@ -27,18 +27,21 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
     with SingleTickerProviderStateMixin {
   final SingleApplianceController controller = Get.find();
   late TabController tabController;
+
   @override
   void initState() {
+    super.initState();
+    final int initialIndex = Get.arguments?[AppMapKeys.tabIndex] ?? 0;
     tabController = TabController(
+      initialIndex: initialIndex,
       length: controller.tabsTitle.length,
       vsync: this,
     );
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final appliance = widget.attributes;
+    final operationalAppliance = widget.attributes;
     return Scaffold(
       backgroundColor: AppColors.offWhite,
       appBar: AppBar(
@@ -60,7 +63,7 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
         ),
         leadingWidth: AppSizes.width_46,
         title: Text(
-          appliance.name,
+          operationalAppliance.appliance.name,
           style: AppTextStyles.largeBold.copyWith(
             color: AppColors.black,
           ),
@@ -78,7 +81,7 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
             Container(
               color: AppColors.white,
               padding: EdgeInsets.symmetric(
-                horizontal: AppSizes.width_16,
+                horizontal: AppSizes.w16,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,20 +95,20 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
                         height: AppSizes.width_6,
                         width: AppSizes.width_6,
                         margin: EdgeInsets.only(
-                          right: AppSizes.width_4,
+                          right: AppSizes.w4,
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: appliance.status.isRunning
+                          color: operationalAppliance.status.isRunning
                               ? AppColors.blue
                               : AppColors.coolGrey,
                         ),
                       ),
                       Text(
-                        appliance.status.isRunning
+                        operationalAppliance.status.isRunning
                             ? "Running"
                             : "Last ran at ${formatTimeFromDateTime(
-                                appliance.status.lastUsed!,
+                                operationalAppliance.status.lastUsed!,
                               )}",
                         style: AppTextStyles.normalRegular.copyWith(
                           color: AppColors.blackMatte,
@@ -117,15 +120,15 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
                     children: [
                       Image.asset(
                         AppIcons.link,
-                        height: AppSizes.width_16,
-                        width: AppSizes.width_16,
+                        height: AppSizes.w16,
+                        width: AppSizes.w16,
                         fit: BoxFit.contain,
                       ),
                       SizedBox(
-                        width: AppSizes.width_4,
+                        width: AppSizes.w4,
                       ),
                       Text(
-                        appliance.location,
+                        operationalAppliance.location,
                         style: AppTextStyles.smallRegular.copyWith(
                           color: AppColors.blackMatte,
                         ),

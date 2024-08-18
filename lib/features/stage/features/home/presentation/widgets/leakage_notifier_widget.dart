@@ -31,7 +31,7 @@ class LeakageNotifierWidget extends StatelessWidget {
           AppSizes.width_8,
         ),
         margin: EdgeInsets.all(
-          AppSizes.width_4,
+          AppSizes.w4,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

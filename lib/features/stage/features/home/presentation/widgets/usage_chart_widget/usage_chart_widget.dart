@@ -1,19 +1,26 @@
 import 'dart:math';
 
 import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/features/stage/features/home/presentation/controllers/home_controller.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 
+import '../../../../../../../core/models/drop_down/drop_down_option_attributes.dart';
 import '../my_drop_down_button.dart';
 
 class UsageChartWidget extends StatelessWidget {
   const UsageChartWidget({
-    required this.points,
+    // required this.points,
+    required this.chartFrequencies,
+    required this.onUpdateChartFrequency,
     super.key,
   });
 
-  final List<Point> points;
+  // final List<Point> points;
+  final List<DropDownOptionAttributes> chartFrequencies;
+  final Function(int) onUpdateChartFrequency;
 
   static const buttonTitles = [
     AppStrings.daily,
@@ -24,180 +31,212 @@ class UsageChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: AppSizes.getScreenWidth(),
-      margin: EdgeInsets.symmetric(
-        vertical: AppSizes.width_8,
-      ),
-      padding: EdgeInsets.symmetric(
-        vertical: AppSizes.width_16,
-      ),
-      color: AppColors.white,
-      child: Column(
-        children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              MyDropDownButton(),
-            ],
-          ),
-          SizedBox(
-            height: AppSizes.height_8,
-          ),
-          Container(
-            width: AppSizes.getScreenWidth() * 0.9,
-            padding: EdgeInsets.all(
-              AppSizes.width_4,
+    return GetBuilder<HomeController>(builder: (controller) {
+      final isHourly = controller.selectedOptionIndex.value == 0;
+      final isDaily = controller.selectedOptionIndex.value == 1;
+      final isWeekly = controller.selectedOptionIndex.value == 2;
+      final isMonthly = controller.selectedOptionIndex.value == 4;
+      return Container(
+        width: AppSizes.getScreenWidth(),
+        margin: EdgeInsets.symmetric(
+          vertical: AppSizes.width_8,
+        ),
+        padding: EdgeInsets.symmetric(
+          vertical: AppSizes.w16,
+        ),
+        color: AppColors.white,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                MyDropDownButton(
+                  options: chartFrequencies,
+                  onTap: onUpdateChartFrequency,
+                ),
+              ],
             ),
-            child: AspectRatio(
-              aspectRatio: 1.5,
-              child: LineChart(
-                LineChartData(
-                  gridData: FlGridData(
-                    show: true,
-                    drawVerticalLine: true,
-                    verticalInterval: 100,
-                    getDrawingVerticalLine: (value) {
-                      return const FlLine(
-                        color: AppColors.charcoal,
-                        strokeWidth: 1,
-                        dashArray: [0, 0],
-                      );
-                    },
-                  ),
-                  titlesData: FlTitlesData(
-                    rightTitles: const AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: false,
+            SizedBox(
+              height: AppSizes.height_8,
+            ),
+            Container(
+              width: AppSizes.getScreenWidth() * 0.9,
+              padding: EdgeInsets.only(
+                right: AppSizes.w4,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1.5,
+                child: LineChart(
+                  LineChartData(
+                    gridData: FlGridData(
+                      show: true,
+                      drawVerticalLine: true,
+                      verticalInterval: 100,
+                      getDrawingVerticalLine: (value) {
+                        return const FlLine(
+                          color: AppColors.charcoal,
+                          strokeWidth: 0.5,
+                          dashArray: [0, 0],
+                        );
+                      },
+                    ),
+                    titlesData: FlTitlesData(
+                      rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                        ),
+                      ),
+                      topTitles: const AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                        ),
+                      ),
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          interval: 6,
+                          reservedSize: AppSizes.width_22,
+                          getTitlesWidget: (value, meta) {
+                            if (isHourly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.xAxisLabelsHourly,
+                              );
+                            } else if (isDaily) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.xAxisLabelsDaily,
+                              );
+                            } else if (isWeekly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.xAxisLabelsWeekly,
+                              );
+                            } else if (isMonthly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.xAxisLabelsMonthly,
+                              );
+                            }
+                            return const SideTitleTextWidget("");
+                          },
+                        ),
+                      ),
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          reservedSize: AppSizes.width_32,
+                          interval: 2,
+                          getTitlesWidget: (value, meta) {
+                            if (isHourly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.yAxisLabelsHourly,
+                              );
+                            } else if (isDaily) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.yAxisLabelsDaily,
+                              );
+                            } else if (isWeekly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.yAxisLabelsWeekly,
+                              );
+                            } else if (isMonthly) {
+                              return getTitlesWidget(
+                                value,
+                                meta,
+                                controller.yAxisLabelsMonthly,
+                              );
+                            }
+                            return const SideTitleTextWidget(
+                              "",
+                            ); // Default case
+                          },
+                        ),
                       ),
                     ),
-                    topTitles: const AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: false,
-                      ),
+                    borderData: FlBorderData(
+                      show: false,
                     ),
-                    bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        interval: 1,
-                        reservedSize: AppSizes.width_22,
-                        getTitlesWidget: (value, meta) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return const SideTitleTextWidget("0:00");
-                            case 1:
-                              return const SideTitleTextWidget("6:00");
-                            case 2:
-                              return const SideTitleTextWidget("12:00");
-                            case 3:
-                              return const SideTitleTextWidget("18:00");
-                            default:
-                              return const SideTitleTextWidget("");
-                          }
+                    minX: 0,
+                    maxX: controller.maxX,
+                    minY: 0,
+                    maxY: controller.maxY,
+                    lineBarsData: [
+                      LineChartBarData(
+                        spots: getFLSpots(controller.chartData1),
+                        isCurved: true,
+                        dotData: const FlDotData(
+                          show: false,
+                        ),
+                        color: AppColors.deepBlush,
+                        barWidth: 3,
+                      ),
+                      LineChartBarData(
+                        spots: getFLSpots(controller.chartData2),
+                        isCurved: true,
+                        dotData: const FlDotData(
+                          show: false,
+                        ),
+                        color: AppColors.platinum,
+                        barWidth: 3,
+                      ),
+                    ],
+                    lineTouchData: LineTouchData(
+                      touchTooltipData: LineTouchTooltipData(
+                        getTooltipColor: (spot) {
+                          return AppColors.white;
+                        },
+                        tooltipRoundedRadius: AppSizes.width_8,
+                        getTooltipItems: (List<LineBarSpot> touchedSpots) {
+                          return touchedSpots.map((LineBarSpot touchedSpot) {
+                            return LineTooltipItem(
+                              touchedSpot.y.toStringAsFixed(
+                                2,
+                              ),
+                              AppTextStyles.normalSemiBold.copyWith(
+                                color: touchedSpot.bar.color,
+                              ),
+                            );
+                          }).toList();
                         },
                       ),
-                    ),
-                    leftTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        reservedSize: AppSizes.width_26,
-                        interval: 1,
-                        getTitlesWidget: (value, meta) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return const SideTitleTextWidget("0L");
-                            case 10:
-                              return const SideTitleTextWidget("10L");
-                            case 20:
-                              return const SideTitleTextWidget("20L");
-                            case 30:
-                              return const SideTitleTextWidget("30L");
-                            case 40:
-                              return const SideTitleTextWidget("40L");
-                            case 50:
-                              return const SideTitleTextWidget("50L");
-                            default:
-                              return const SideTitleTextWidget("");
-                          }
-                        },
-                      ),
-                    ),
-                  ),
-                  borderData: FlBorderData(
-                    show: false,
-                  ),
-                  minX: 0,
-                  maxX: 3,
-                  minY: 0,
-                  maxY: 50,
-                  lineBarsData: [
-                    LineChartBarData(
-                      spots: [
-                        const FlSpot(0.0, 12.3),
-                        const FlSpot(0.4, 25.7),
-                        const FlSpot(0.8, 38.9),
-                        const FlSpot(1.2, 15.2),
-                        const FlSpot(1.7, 45.3),
-                        const FlSpot(2.1, 8.7),
-                        const FlSpot(2.4, 30.1),
-                        const FlSpot(2.7, 22.8),
-                        const FlSpot(2.9, 48.5),
-                        const FlSpot(3.0, 35.4),
-                      ],
-                      isCurved: true,
-                      dotData: const FlDotData(
-                        show: false,
-                      ),
-                      color: AppColors.deepBlush,
-                      barWidth: 3,
-                    ),
-                    LineChartBarData(
-                      spots: [
-                        const FlSpot(0.0, 2.3),
-                        const FlSpot(0.4, 15.7),
-                        const FlSpot(0.8, 28.9),
-                        const FlSpot(1.2, 5.2),
-                        const FlSpot(1.7, 35.3),
-                        const FlSpot(2.1, 0.7),
-                        const FlSpot(2.4, 20.1),
-                        const FlSpot(2.7, 12.8),
-                        const FlSpot(2.9, 38.5),
-                        const FlSpot(3.0, 25.4),
-                      ],
-                      isCurved: true,
-                      dotData: const FlDotData(
-                        show: false,
-                      ),
-                      color: AppColors.platinum,
-                      barWidth: 3,
-                    ),
-                  ],
-                  lineTouchData: LineTouchData(
-                    touchTooltipData: LineTouchTooltipData(
-                      getTooltipColor: (spot) {
-                        return AppColors.white;
-                      },
-                      tooltipRoundedRadius: AppSizes.width_8,
-                      getTooltipItems: (List<LineBarSpot> touchedSpots) {
-                        return touchedSpots.map((LineBarSpot touchedSpot) {
-                          return LineTooltipItem(
-                            touchedSpot.y.toStringAsFixed(
-                              2,
-                            ),
-                            AppTextStyles.normalSemiBold.copyWith(
-                              color: touchedSpot.bar.color,
-                            ),
-                          );
-                        }).toList();
-                      },
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    });
+  }
+
+  List<FlSpot> getFLSpots(List<Point> points) {
+    return points.map(
+      (point) {
+        return FlSpot(
+          point.x.toDouble(),
+          point.y.toDouble(),
+        );
+      },
+    ).toList();
+  }
+
+  Widget getTitlesWidget(double value, TitleMeta meta, List<String> labels) {
+    int index = value.toInt();
+    if (index >= 0 && index < labels.length) {
+      return SideTitleTextWidget(labels[index]);
+    }
+    return const SideTitleTextWidget("");
   }
 }

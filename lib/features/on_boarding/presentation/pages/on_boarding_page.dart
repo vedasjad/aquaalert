@@ -17,7 +17,6 @@ class OnBoardingPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Spacer(),
-          // Placeholder for logo
           Image.asset(
             AppImages.a,
             height: AppSizes.v100,

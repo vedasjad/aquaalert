@@ -10,7 +10,7 @@ class AppliancesIndoorTab extends StatelessWidget {
     required this.appliancesInfo,
     super.key,
   });
-  final List<ApplianceAttributes> appliancesInfo;
+  final List<OperationalAppliance> appliancesInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class AppliancesIndoorTab extends StatelessWidget {
           ...List.generate(appliancesInfo.length, (index) {
             final appliance = appliancesInfo[index];
             return ApplianceTile(
-              appliance: appliance,
+              operationalAppliance: appliance,
             );
           }),
         ],

@@ -25,8 +25,8 @@ class IconWidget extends StatelessWidget {
             width: AppSizes.width_38,
             child: Image.asset(
               iconPath,
-              height: AppSizes.width_16,
-              width: AppSizes.width_16,
+              height: AppSizes.w16,
+              width: AppSizes.w16,
               fit: BoxFit.contain,
             ),
           ),

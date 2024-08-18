@@ -44,7 +44,7 @@ class ProfileSettingTile extends StatelessWidget {
             if (attributes.hasWarning == true)
               Positioned(
                 right: 0,
-                top: AppSizes.width_4,
+                top: AppSizes.w4,
                 child: Image.asset(
                   AppIcons.warning,
                   height: AppSizes.width_14,

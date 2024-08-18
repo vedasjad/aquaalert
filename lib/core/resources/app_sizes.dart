@@ -2,8 +2,9 @@ part of 'app_resources.dart';
 
 class AppSizes {
   // Screen dimensions
-  static double getScreenWidth() => ScreenUtil().screenWidth;
-  static double getScreenHeight() => ScreenUtil().screenHeight;
+  static double getScreenWidth() => Get.width;
+  static double getScreenHeight() => Get.height;
+  static const Size designSize = Size(375, 755);
 
   // Font sizes
   static final double fontSize_2 = 2.sp;
@@ -59,16 +60,20 @@ class AppSizes {
   static final double h48 = 48.h;
   static final double height_50 = 50.h;
   static final double height_64 = 64.h;
+  static final double h170 = 170.h;
+  static final double h110 = 110.h;
+  static final double h165 = 165.h;
+  static final double h200 = 200.h;
 
   static final double w2 = 2.w;
   static final double width_3 = 3.w;
-  static final double width_4 = 4.w;
+  static final double w4 = 4.w;
   static final double width_6 = 6.w;
   static final double width_8 = 8.w;
   static final double w10 = 10.w;
   static final double width_12 = 12.w;
   static final double width_14 = 14.w;
-  static final double width_16 = 16.w;
+  static final double w16 = 16.w;
   static final double width_18 = 18.w;
   static final double w20 = 20.w;
   static final double width_22 = 22.w;
@@ -86,17 +91,22 @@ class AppSizes {
   static final double width_44 = 44.w;
   static final double width_46 = 46.w;
   static final double width_48 = 48.w;
-  static final double width_50 = 50.w;
+  static final double w50 = 50.w;
   static final double width_54 = 54.w;
   static final double width_60 = 60.w;
   static final double width_70 = 70.w;
   static final double width_72 = 72.w;
   static final double w75 = 75.w;
+  static final double w80 = 80.w;
+  static final double w90 = 90.w;
   static final double width_100 = 100.w;
+  static final double w102 = 102.w;
+  static final double w110 = 110.w;
   static final double width_115 = 115.w;
-  static final double width_120 = 120.w;
+  static final double w120 = 120.w;
   static final double width_140 = 140.w;
-  static final double width_150 = 150.w;
+  static final double w150 = 150.w;
+  static final double w180 = 180.w;
   static final double w238 = 238.w;
   static final double w300 = 300.w;
   static final double w327 = 327.w;
@@ -133,13 +143,13 @@ class AppSizes {
   // Getters for width with value prefix
   static double get value2 => w2;
   static double get value3 => width_3;
-  static double get value4 => width_4;
+  static double get value4 => w4;
   static double get value6 => width_6;
   static double get value8 => width_8;
   static double get v10 => w10;
   static double get value12 => width_12;
   static double get value14 => width_14;
-  static double get value16 => width_16;
+  static double get value16 => w16;
   static double get value18 => width_18;
   static double get v20 => w20;
   static double get value22 => width_22;
@@ -157,17 +167,19 @@ class AppSizes {
   static double get value44 => width_44;
   static double get value46 => width_46;
   static double get v48 => width_48;
-  static double get v50 => width_50;
+  static double get v50 => w50;
   static double get value54 => width_54;
   static double get value60 => width_60;
   static double get value70 => width_70;
   static double get value72 => width_72;
   static double get value75 => w75;
+  static double get v90 => w90;
   static double get v100 => width_100;
   static double get value115 => width_115;
-  static double get value120 => width_120;
+  static double get value120 => w120;
   static double get value140 => width_140;
-  static double get value150 => width_150;
+  static double get value150 => w150;
+  static double get v180 => w180;
   static double get v238 => w238;
   static double get v327 => w327;
   static double get v300 => w300;

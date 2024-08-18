@@ -16,7 +16,7 @@ class UsageTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return Container(
-        padding: EdgeInsets.all(AppSizes.width_4),
+        padding: EdgeInsets.all(AppSizes.w4),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(

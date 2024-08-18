@@ -30,7 +30,7 @@ class TotalConsumptionPieChart extends StatelessWidget {
         vertical: AppSizes.width_8,
       ),
       padding: EdgeInsets.all(
-        AppSizes.width_16,
+        AppSizes.w16,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -90,7 +90,7 @@ class TotalConsumptionPieChart extends StatelessWidget {
                         height: AppSizes.width_12,
                         width: AppSizes.width_12,
                         margin: EdgeInsets.only(
-                          right: AppSizes.width_4,
+                          right: AppSizes.w4,
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,

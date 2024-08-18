@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:aquaalert/features/stage/features/home/presentation/widgets/usage_chart_widget/usage_chart_widget.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/widgets/water_usage_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../../../../core/models/drop_down/drop_down_option_attributes.dart';
 import '../../../../../../../../../core/resources/app_resources.dart';
 
 class UsageStatisticsTab extends StatelessWidget {
@@ -19,13 +18,22 @@ class UsageStatisticsTab extends StatelessWidget {
             hasFullWidth: true,
           ),
           UsageChartWidget(
-            points: List.generate(
-              8,
-              (index) => Point(
-                index,
-                Random().nextDouble() * 100,
+            chartFrequencies: [
+              DropDownOptionAttributes(
+                title: 'Hourly',
+                isSelected: true,
               ),
-            ),
+              DropDownOptionAttributes(
+                title: 'Daily',
+              ),
+              DropDownOptionAttributes(
+                title: 'Weekly',
+              ),
+              DropDownOptionAttributes(
+                title: 'Monthly',
+              ),
+            ],
+            onUpdateChartFrequency: (index) {},
           ),
         ],
       ),

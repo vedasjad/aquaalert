@@ -1,5 +1,4 @@
 import 'package:aquaalert/core/resources/resources.dart';
-import 'package:aquaalert/features/stage/features/appliances/domain/models/appliance_info.dart';
 import 'package:aquaalert/features/stage/features/appliances/presentation/controllers/appliances_controller.dart';
 import 'package:aquaalert/features/stage/features/appliances/presentation/pages/tabs/appliances_indoor_tab.dart';
 import 'package:flutter/material.dart';
@@ -23,43 +22,6 @@ class _AppliancesPageState extends State<AppliancesPage>
   late TabController tabController;
   final AppliancesController controller = Get.find();
 
-  final appliancesInfo = [
-    ApplianceAttributes(
-      iconPath: AppIcons.faucet,
-      location: "Bedroom 1",
-      status: ApplianceStatus(
-        isRunning: true,
-      ),
-      name: "Faucet",
-    ),
-    ApplianceAttributes(
-      iconPath: AppIcons.washingMachine,
-      location: "Outdoor",
-      status: ApplianceStatus(
-        isRunning: false,
-        lastUsed: DateTime.now(),
-      ),
-      name: "Washing Machine",
-    ),
-    ApplianceAttributes(
-      iconPath: AppIcons.shower,
-      location: "Master",
-      status: ApplianceStatus(
-        isRunning: false,
-        lastUsed: DateTime.now(),
-      ),
-      name: "Shower 3",
-    ),
-    ApplianceAttributes(
-      iconPath: AppIcons.rOSystem,
-      location: "Kitchen",
-      status: ApplianceStatus(
-        isRunning: false,
-        lastUsed: DateTime.now(),
-      ),
-      name: "RO System",
-    ),
-  ];
   @override
   void initState() {
     tabController = TabController(
@@ -104,10 +66,10 @@ class _AppliancesPageState extends State<AppliancesPage>
                 controller: tabController,
                 children: [
                   AppliancesIndoorTab(
-                    appliancesInfo: appliancesInfo,
+                    appliancesInfo: controller.indoorOperationalAppliances,
                   ),
                   AppliancesIndoorTab(
-                    appliancesInfo: appliancesInfo,
+                    appliancesInfo: controller.outdoorOperationalAppliances,
                   ),
                 ],
               ),

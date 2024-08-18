@@ -25,7 +25,7 @@ class MonthlyUsageLinearIndicator extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: AppSizes.width_4,
+              width: AppSizes.w4,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

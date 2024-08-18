@@ -25,7 +25,7 @@ class ProfileHeader extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.all(
-        AppSizes.width_16,
+        AppSizes.w16,
       ),
       child: Row(
         children: [

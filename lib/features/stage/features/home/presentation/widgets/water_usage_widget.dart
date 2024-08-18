@@ -1,7 +1,6 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class WaterUsageWidget extends StatelessWidget {
@@ -15,7 +14,7 @@ class WaterUsageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return hasFullWidth
         ? Container(
-            height: 170.h,
+            height: AppSizes.h170,
             width: AppSizes.getScreenWidth(),
             color: AppColors.white,
             padding: EdgeInsets.all(
@@ -36,12 +35,12 @@ class WaterUsageWidget extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      width: AppSizes.width_4,
+                      width: AppSizes.w4,
                     ),
                     Image.asset(
                       AppIcons.info,
-                      height: AppSizes.width_16,
-                      width: AppSizes.width_16,
+                      height: AppSizes.w16,
+                      width: AppSizes.w16,
                       fit: BoxFit.contain,
                     ),
                   ],
@@ -53,8 +52,8 @@ class WaterUsageWidget extends StatelessWidget {
                       margin: EdgeInsets.only(
                         top: AppSizes.height_8,
                       ),
-                      height: 110.w,
-                      width: 120.w,
+                      height: AppSizes.h110,
+                      width: AppSizes.w120,
                       child: SfRadialGauge(
                         axes: <RadialAxis>[
                           RadialAxis(
@@ -124,7 +123,7 @@ class WaterUsageWidget extends StatelessWidget {
             ),
           )
         : Container(
-            height: 200.h,
+            height: AppSizes.h200,
             width: AppSizes.getScreenWidth() / 2.05,
             color: AppColors.white,
             padding: EdgeInsets.all(
@@ -145,12 +144,12 @@ class WaterUsageWidget extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      width: AppSizes.width_4,
+                      width: AppSizes.w4,
                     ),
                     Image.asset(
                       AppIcons.info,
-                      height: AppSizes.width_16,
-                      width: AppSizes.width_16,
+                      height: AppSizes.w16,
+                      width: AppSizes.w16,
                       fit: BoxFit.contain,
                     ),
                   ],
@@ -160,8 +159,8 @@ class WaterUsageWidget extends StatelessWidget {
                     top: AppSizes.height_8,
                     bottom: AppSizes.height_8,
                   ),
-                  height: 100.w,
-                  width: 100.w,
+                  height: AppSizes.v100,
+                  width: AppSizes.v100,
                   child: SfRadialGauge(
                     axes: <RadialAxis>[
                       RadialAxis(

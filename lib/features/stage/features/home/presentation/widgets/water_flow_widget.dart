@@ -1,7 +1,6 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class WaterFlowWidget extends StatelessWidget {
@@ -16,7 +15,7 @@ class WaterFlowWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return hasFullWidth
         ? Container(
-            height: 165.h,
+            height: AppSizes.h165,
             width: AppSizes.getScreenWidth(),
             color: AppColors.white,
             margin: EdgeInsets.symmetric(
@@ -52,7 +51,7 @@ class WaterFlowWidget extends StatelessWidget {
                         ),
                         padding: EdgeInsets.symmetric(
                           horizontal: AppSizes.width_8,
-                          vertical: AppSizes.width_4,
+                          vertical: AppSizes.w4,
                         ),
                         child: Row(
                           children: [
@@ -82,13 +81,13 @@ class WaterFlowWidget extends StatelessWidget {
                       margin: EdgeInsets.symmetric(
                         vertical: AppSizes.height_8,
                       ),
-                      height: 90.w,
-                      width: 180.w,
+                      height: AppSizes.v90,
+                      width: AppSizes.w180,
                       child: SingleChildScrollView(
                         physics: const NeverScrollableScrollPhysics(),
                         child: SizedBox(
-                          height: 150.w,
-                          width: 180.w,
+                          height: AppSizes.w150,
+                          width: AppSizes.w180,
                           child: SfRadialGauge(
                             axes: <RadialAxis>[
                               RadialAxis(
@@ -155,7 +154,7 @@ class WaterFlowWidget extends StatelessWidget {
             ),
           )
         : Container(
-            height: 200.h,
+            height: AppSizes.h200,
             width: AppSizes.getScreenWidth() / 2.05,
             color: AppColors.white,
             padding: EdgeInsets.symmetric(
@@ -188,7 +187,7 @@ class WaterFlowWidget extends StatelessWidget {
                         ),
                         padding: EdgeInsets.symmetric(
                           horizontal: AppSizes.width_8,
-                          vertical: AppSizes.width_4,
+                          vertical: AppSizes.w4,
                         ),
                         child: Row(
                           children: [
@@ -208,13 +207,13 @@ class WaterFlowWidget extends StatelessWidget {
                   margin: EdgeInsets.symmetric(
                     vertical: AppSizes.height_12,
                   ),
-                  height: 90.w,
-                  width: 180.w,
+                  height: AppSizes.w90,
+                  width: AppSizes.w180,
                   child: SingleChildScrollView(
                     physics: const NeverScrollableScrollPhysics(),
                     child: SizedBox(
-                      height: 150.w,
-                      width: 180.w,
+                      height: AppSizes.w150,
+                      width: AppSizes.w180,
                       child: SfRadialGauge(
                         axes: <RadialAxis>[
                           RadialAxis(

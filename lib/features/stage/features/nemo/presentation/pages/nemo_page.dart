@@ -104,7 +104,7 @@ class NemoPage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: AppSizes.w10,
-                              vertical: AppSizes.width_4,
+                              vertical: AppSizes.w4,
                             ),
                             decoration: BoxDecoration(
                               color: AppColors.black,
@@ -131,7 +131,7 @@ class NemoPage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: AppSizes.width_4,
+                        height: AppSizes.w4,
                       ),
                       const MonthlyUsageLinearIndicator(
                         ltrsPerDay: '251',

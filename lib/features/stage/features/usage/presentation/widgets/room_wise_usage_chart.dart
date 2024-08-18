@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:aquaalert/core/models/drop_down/drop_down_option_attributes.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/widgets/my_drop_down_button.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/widgets/usage_chart_widget/widgets/side_title_text_widget.dart';
@@ -20,7 +21,7 @@ class RoomWiseUsageChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppSizes.width_150,
+      height: AppSizes.w150,
       width: AppSizes.getScreenWidth(),
       margin: EdgeInsets.only(
         bottom: AppSizes.w10,
@@ -39,13 +40,24 @@ class RoomWiseUsageChart extends StatelessWidget {
                   sector.label,
                   style: AppTextStyles.normalBold,
                 ),
-                const MyDropDownButton(),
+                MyDropDownButton(
+                  options: [
+                    DropDownOptionAttributes(
+                      title: AppStrings.hourly,
+                    ),
+                    DropDownOptionAttributes(
+                      title: AppStrings.daily,
+                      isSelected: true,
+                    ),
+                  ],
+                  onTap: (index) {},
+                ),
               ],
             ),
           ),
           Container(
             padding: EdgeInsets.all(
-              AppSizes.width_4,
+              AppSizes.w4,
             ),
             height: AppSizes.width_100,
             width: AppSizes.getScreenWidth() * 0.95,

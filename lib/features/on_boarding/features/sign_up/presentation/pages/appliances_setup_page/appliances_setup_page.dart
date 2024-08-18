@@ -1,4 +1,6 @@
 import 'package:aquaalert/app/routes/app_routes.dart';
+import 'package:aquaalert/core/models/appliances/appliance.dart';
+import 'package:aquaalert/core/utils/logger.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/controllers/appliances_setup_page/appliances_setup_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,35 +19,8 @@ class AppliancesSetupPage extends StatefulWidget {
 class _AppliancesSetupPageState extends State<AppliancesSetupPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  final Set<String> _selectedIndoorAppliances = <String>{};
-  final Set<String> _selectedOutdoorAppliances = <String>{};
 
-  final List<Map<String, String>> appliances = [
-    {
-      'name': 'Faucet',
-      'icon': AppIcons.faucet,
-    },
-    {
-      'name': 'Washing machine',
-      'icon': AppIcons.washingMachine,
-    },
-    {
-      'name': 'Bathtub',
-      'icon': AppIcons.washingMachine,
-    },
-    {
-      'name': 'Shower',
-      'icon': AppIcons.shower,
-    },
-    {
-      'name': 'Dishwasher',
-      'icon': AppIcons.shower,
-    },
-    {
-      'name': 'RO System',
-      'icon': AppIcons.rOSystem,
-    },
-  ];
+  final Set<Appliance> _selectedAppliances = {};
 
   final AppliancesSetupPageController controller = Get.find();
 
@@ -137,8 +112,12 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    _buildApplianceGrid(_selectedIndoorAppliances),
-                    _buildApplianceGrid(_selectedOutdoorAppliances),
+                    _buildApplianceGrid(
+                      isIndoor: true,
+                    ),
+                    _buildApplianceGrid(
+                      isIndoor: false,
+                    ),
                   ],
                 ),
               ),
@@ -200,7 +179,13 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
     );
   }
 
-  Widget _buildApplianceGrid(Set<String> selectedAppliances) {
+  Widget _buildApplianceGrid({
+    required bool isIndoor,
+  }) {
+    List<Appliance> appliances = isIndoor
+        ? controller.indoorAppliances.toList()
+        : controller.outdoorAppliances.toList();
+    log.wtf(appliances);
     return GridView.builder(
       itemCount: appliances.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -210,19 +195,14 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
       ),
       itemBuilder: (context, index) {
         final appliance = appliances[index];
-        final isSelected = selectedAppliances.contains(appliance['name']);
+        final isSelected = _selectedAppliances.contains(appliance);
         return GestureDetector(
           onTap: () {
             setState(() {
               if (isSelected) {
-                selectedAppliances.remove(appliance['name']);
+                _selectedAppliances.remove(appliance);
               } else {
-                if (_tabController.index == 0) {
-                  _selectedOutdoorAppliances.remove(appliance['name']);
-                } else {
-                  _selectedIndoorAppliances.remove(appliance['name']);
-                }
-                selectedAppliances.add(appliance['name']!);
+                _selectedAppliances.add(appliance);
               }
             });
           },
@@ -244,7 +224,7 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  appliance['icon']!,
+                  appliance.iconPath,
                   height: AppSizes.v50,
                   width: AppSizes.v50,
                   fit: BoxFit.contain,
@@ -252,8 +232,8 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  appliance['name']!,
-                  style: AppTextStyles.mediumMedium,
+                  appliance.name,
+                  style: AppTextStyles.normalMedium,
                   textAlign: TextAlign.center,
                 ),
               ],

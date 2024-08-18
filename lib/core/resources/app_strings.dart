@@ -94,4 +94,5 @@ class AppStrings {
   static const yourHomeAppliances = 'Your home appliances';
   static const yourHomeAppliancesDescription =
       'Select the appliances you use to track water usage accurately.';
+  static const hourly = "Hourly";
 }

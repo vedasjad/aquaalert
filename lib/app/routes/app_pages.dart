@@ -1,5 +1,7 @@
 import 'package:aquaalert/app/routes/app_routes.dart';
+import 'package:aquaalert/features/on_boarding/presentation/bindings/on_boarding_binding.dart';
 import 'package:aquaalert/features/stage/features/appliances/presentation/bindings/appliances_binding.dart';
+import 'package:aquaalert/features/stage/features/home/presentation/bindings/home_binding.dart';
 import 'package:aquaalert/features/stage/features/nemo/presentation/bindings/nemo_binding.dart';
 import 'package:aquaalert/features/stage/presentation/pages/stage_page.dart';
 import 'package:get/get.dart';
@@ -17,8 +19,9 @@ class AppPages {
       page: () => const LoginPage(),
     ),
     GetPage(
-      name: AppRoutes.splash,
+      name: AppRoutes.onBoarding,
       page: () => const OnBoardingPage(),
+      binding: OnBoardingBinding(),
     ),
     GetPage(
       name: AppRoutes.stage,
@@ -27,6 +30,7 @@ class AppPages {
         StageBinding(),
         NemoBinding(),
         AppliancesBinding(),
+        HomeBinding(),
       ],
     ),
   ];

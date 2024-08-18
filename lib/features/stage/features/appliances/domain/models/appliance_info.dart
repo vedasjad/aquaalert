@@ -1,13 +1,13 @@
-class ApplianceAttributes {
-  final String iconPath;
-  final String name;
+import 'package:aquaalert/core/models/appliances/appliance.dart';
+
+class OperationalAppliance {
   final ApplianceStatus status;
+  final Appliance appliance;
   final String location;
-  ApplianceAttributes({
-    required this.iconPath,
+  OperationalAppliance({
     required this.location,
     required this.status,
-    required this.name,
+    required this.appliance,
   });
 }
 

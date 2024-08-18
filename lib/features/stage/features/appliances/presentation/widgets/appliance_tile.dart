@@ -11,10 +11,10 @@ import '../../features/single_appliance/presentation/pages/single_appliance_page
 class ApplianceTile extends StatelessWidget {
   const ApplianceTile({
     super.key,
-    required this.appliance,
+    required this.operationalAppliance,
   });
 
-  final ApplianceAttributes appliance;
+  final OperationalAppliance operationalAppliance;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ApplianceTile extends StatelessWidget {
       onTap: () {
         Get.to(
           () => SingleAppliancePage(
-            attributes: appliance,
+            attributes: operationalAppliance,
           ),
           binding: SingleApplianceBinding(),
         );
@@ -49,7 +49,7 @@ class ApplianceTile extends StatelessWidget {
               ),
               alignment: Alignment.center,
               child: Image.asset(
-                appliance.iconPath,
+                operationalAppliance.appliance.iconPath,
                 width: AppSizes.width_42,
                 height: AppSizes.width_32,
                 fit: BoxFit.contain,
@@ -83,7 +83,7 @@ class ApplianceTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    appliance.name,
+                    operationalAppliance.appliance.name,
                     style: AppTextStyles.largeMedium,
                   ),
                   Row(
@@ -95,20 +95,20 @@ class ApplianceTile extends StatelessWidget {
                             height: AppSizes.width_6,
                             width: AppSizes.width_6,
                             margin: EdgeInsets.only(
-                              right: AppSizes.width_4,
+                              right: AppSizes.w4,
                             ),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: appliance.status.isRunning
+                              color: operationalAppliance.status.isRunning
                                   ? AppColors.blue
                                   : AppColors.coolGrey,
                             ),
                           ),
                           Text(
-                            appliance.status.isRunning
+                            operationalAppliance.status.isRunning
                                 ? "Running"
                                 : "Last ran at ${formatTimeFromDateTime(
-                                    appliance.status.lastUsed!,
+                                    operationalAppliance.status.lastUsed!,
                                   )}",
                             style: AppTextStyles.smallRegular.copyWith(
                               color: AppColors.blackMatte,
@@ -120,15 +120,15 @@ class ApplianceTile extends StatelessWidget {
                         children: [
                           Image.asset(
                             AppIcons.link,
-                            height: AppSizes.width_16,
-                            width: AppSizes.width_16,
+                            height: AppSizes.w16,
+                            width: AppSizes.w16,
                             fit: BoxFit.contain,
                           ),
                           SizedBox(
-                            width: AppSizes.width_4,
+                            width: AppSizes.w4,
                           ),
                           Text(
-                            appliance.location,
+                            operationalAppliance.location,
                             style: AppTextStyles.smallRegular.copyWith(
                               color: AppColors.blackMatte,
                             ),
