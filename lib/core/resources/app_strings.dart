@@ -59,4 +59,19 @@ class AppStrings {
   static const add = "Add";
   static const usageStats = "Usage Statistics";
   static const alerts = "Alerts";
+  static const signUp = "Sign Up";
+  static const helloThereWelcome = 'Hello there, welcome!';
+  static const name = "Name";
+  static const phoneNumber = "Phone number";
+  static const otp = "OTP";
+  static const agreePrivacyPolicy =
+      'I agree to Privacy Policy and Terms of Use';
+  static const agreePersonalData =
+      'I agree to the processing of my personal data for app functions.';
+  static const signMeUp = "Sign me up";
+  static const alreadyHaveAccount = 'Already have an account? ';
+  static const logIn = 'Log in';
+  static const appDescription =
+      'Track your water usage effortlessly, receive real-time alerts, and take control of your water management.';
+  static const isNewUser = 'New user?';
 }

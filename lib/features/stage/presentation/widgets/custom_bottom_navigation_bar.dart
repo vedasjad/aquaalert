@@ -1,7 +1,6 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../app/configs/size_config.dart';
 import '../../../../core/resources/resources.dart';
 import '../controllers/stage_controller.dart';
 
@@ -20,7 +19,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
       children: <Widget>[
         Container(
           decoration: BoxDecoration(
-            color: AppColors.whitePure,
+            color: AppColors.white,
             boxShadow: [
               BoxShadow(
                 color: AppColors.black.withOpacity(0.15),
@@ -30,20 +29,20 @@ class CustomBottomNavigationBar extends StatelessWidget {
             ],
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
-                SizeConfig.radius_10,
+                AppSizes.radius_10,
               ),
               topRight: Radius.circular(
-                SizeConfig.radius_10,
+                AppSizes.radius_10,
               ),
             ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
-                SizeConfig.radius_10,
+                AppSizes.radius_10,
               ),
               topRight: Radius.circular(
-                SizeConfig.radius_10,
+                AppSizes.radius_10,
               ),
             ),
             child: BottomNavigationBar(
@@ -54,13 +53,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
               },
               selectedItemColor: AppColors.skyBlue,
               unselectedItemColor: AppColors.blackMatte,
-              selectedLabelStyle: AppTextStyles.dmSansSmallRegular.copyWith(
+              selectedLabelStyle: AppTextStyles.smallRegular.copyWith(
                 color: AppColors.skyBlue,
               ),
-              unselectedLabelStyle: AppTextStyles.dmSansSmallRegular.copyWith(
+              unselectedLabelStyle: AppTextStyles.smallRegular.copyWith(
                 color: AppColors.blackMatte,
               ),
-              backgroundColor: AppColors.whitePure,
+              backgroundColor: AppColors.white,
               // fixedColor: AppColors.white,
               type: BottomNavigationBarType.fixed,
               items: controller.tabItems,
@@ -69,15 +68,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
         if (controller.selectedBNBIndex.value == 2)
           Positioned(
-            bottom: SizeConfig.width_24,
+            bottom: AppSizes.width_24,
             left: MediaQuery.of(context).size.width / 2 -
-                SizeConfig.width_22, // Adjust to center
+                AppSizes.width_22, // Adjust to center
             child: GestureDetector(
               onTap: () => controller.updateSelectedBNBIndex(2),
               child: Image.asset(
                 AppIcons.hydraActive,
-                height: SizeConfig.width_44,
-                width: SizeConfig.width_44,
+                height: AppSizes.width_44,
+                width: AppSizes.width_44,
                 fit: BoxFit.contain,
               ),
             ),

@@ -17,6 +17,7 @@ class AppColors {
   static const garage = Color(0xff3DCA65);
   static const greenAccent = Color(0xff47EF44);
   static const greyDavy = Color(0xff525252);
+  static const greyNeutral = Color(0xffa8a8a8);
   static const gunMetal = Color(0xff1E293B);
   static const kitchen = Color(0xff77b4f3);
   static const laundry = Color(0xffFFA84A);
@@ -29,10 +30,10 @@ class AppColors {
   static const paleCornflowerBlue = Color(0xff9BC3FE);
   static const paleBlue = Color(0xffEEF4FF);
   static const platinum = Color(0xffE1E3E8);
-  static const whitePure = Color(0xffffffff);
+  static const white = Color(0xffffffff);
+  static const white2 = Color(0xffE1E3E8);
   static const red = Color(0xffAF1C1C);
   static const redLight = Color(0xffFFF0F0);
   static const skyBlue = Color(0xff396AFC);
   static const slate500 = Color(0xff64748B);
-  static const white = Color(0xffE1E3E8);
 }

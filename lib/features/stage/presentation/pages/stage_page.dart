@@ -15,7 +15,7 @@ class StagePage extends StatelessWidget {
     final StageController controller = Get.find();
     return Obx(() {
       return Scaffold(
-        backgroundColor: AppColors.whitePure,
+        backgroundColor: AppColors.white,
         appBar: (controller.selectedBNBIndex.value < 1) ? buildAppBar() : null,
         bottomNavigationBar: CustomBottomNavigationBar(
           controller: controller,
@@ -27,11 +27,11 @@ class StagePage extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: AppColors.whitePure,
-      surfaceTintColor: AppColors.whitePure,
+      backgroundColor: AppColors.white,
+      surfaceTintColor: AppColors.white,
       title: Text(
         "Hello, Asjad!",
-        style: AppTextStyles.dmSansLargeBold.copyWith(
+        style: AppTextStyles.largeBold.copyWith(
           color: AppColors.black,
         ),
       ),

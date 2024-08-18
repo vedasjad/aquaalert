@@ -3,8 +3,17 @@ part of 'app_resources.dart';
 class AppTextStyles {
   AppTextStyles._();
 
-  static const double _defaultFontSize = 14.0;
+  // Specific font sizes
+  static const double microFontSize = 8.0;
+  static const double extraSmallFontSize = 10.0;
+  static const double smallFontSize = 12.0;
+  static const double defaultFontSize = 14.0;
+  static const double mediumFontSize = 16.0;
+  static const double largeFontSize = 18.0;
+  static const double extraLargeFontSize = 20.0;
+  static const double extraExtraLargeFontSize = 24.0;
 
+  // Font weights
   static const FontWeight light = FontWeight.w300;
   static const FontWeight regular = FontWeight.w400;
   static const FontWeight medium = FontWeight.w500;
@@ -19,15 +28,18 @@ class AppTextStyles {
       GoogleFonts.lexend(
         fontSize: fontSize.sp,
         fontWeight: fontWeight,
+        color: AppColors.black,
       );
 
-  static TextStyle _dmSansBase({
+  static TextStyle _defaultBase({
     required double fontSize,
     required FontWeight fontWeight,
   }) =>
-      GoogleFonts.dmSans(
+      TextStyle(
+        fontFamily: FontFamilies.defaultFamily,
         fontSize: fontSize.sp,
         fontWeight: fontWeight,
+        color: AppColors.black,
       );
 
   static TextStyle _robotoBase({
@@ -37,201 +49,288 @@ class AppTextStyles {
       GoogleFonts.roboto(
         fontSize: fontSize.sp,
         fontWeight: fontWeight,
+        color: AppColors.black,
       );
 
   /// Lexend text styles
-
-  static TextStyle lexendExtraLargeBold = _lexendBase(
-    fontSize: _defaultFontSize * 1.25,
+  static TextStyle lexendExtraExtraLargeBold = _lexendBase(
+    fontSize: extraExtraLargeFontSize,
     fontWeight: bold,
   );
 
   static TextStyle lexendExtraLargeSemiBold = _lexendBase(
-    fontSize: _defaultFontSize * 1.25,
+    fontSize: extraLargeFontSize,
     fontWeight: semiBold,
-  );
-
-  static TextStyle lexendExtraLargeMedium = _lexendBase(
-    fontSize: _defaultFontSize * 1.25,
-    fontWeight: medium,
-  );
-
-  static TextStyle lexendExtraLargeRegular = _lexendBase(
-    fontSize: _defaultFontSize * 1.25,
-    fontWeight: regular,
   );
 
   static TextStyle lexendLargeMedium = _lexendBase(
-    fontSize: _defaultFontSize * 1.125,
+    fontSize: largeFontSize,
     fontWeight: medium,
   );
 
-  static TextStyle lexendNormalRegular = _lexendBase(
-    fontSize: _defaultFontSize,
+  static TextStyle lexendMediumRegular = _lexendBase(
+    fontSize: mediumFontSize,
     fontWeight: regular,
-  );
-
-  static TextStyle lexendNormalSemiBold = _lexendBase(
-    fontSize: _defaultFontSize,
-    fontWeight: semiBold,
   );
 
   static TextStyle lexendSmallRegular = _lexendBase(
-    fontSize: _defaultFontSize * 0.875,
+    fontSize: smallFontSize,
     fontWeight: regular,
   );
 
-  static TextStyle lexendSmallSemiBold = _lexendBase(
-    fontSize: _defaultFontSize * 0.875,
-    fontWeight: semiBold,
-  );
-
   static TextStyle lexendExtraSmallRegular = _lexendBase(
-    fontSize: _defaultFontSize * 0.75,
+    fontSize: extraSmallFontSize,
     fontWeight: regular,
   );
 
   static TextStyle lexendMicroRegular = _lexendBase(
-    fontSize: _defaultFontSize * 0.625,
+    fontSize: microFontSize,
     fontWeight: regular,
   );
 
   /// DMSans text styles
 
-  static TextStyle dmSansExtraLargeBold = _dmSansBase(
-    fontSize: _defaultFontSize * 1.25,
-    fontWeight: bold,
+  // Extra Extra Large
+  static TextStyle extraExtraLargeLight = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
+    fontWeight: light,
   );
-
-  static TextStyle dmSansLargeBold = _dmSansBase(
-    fontSize: _defaultFontSize * 1.125,
-    fontWeight: bold,
+  static TextStyle extraExtraLargeRegular = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
+    fontWeight: regular,
   );
-
-  static TextStyle dmSansLargeMedium = _dmSansBase(
-    fontSize: _defaultFontSize * 1.125,
+  static TextStyle extraExtraLargeMedium = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
     fontWeight: medium,
   );
-
-  static TextStyle dmSansNormalRegular = _dmSansBase(
-    fontSize: _defaultFontSize,
-    fontWeight: regular,
-  );
-
-  static TextStyle dmSansNormalSemiBold = _dmSansBase(
-    fontSize: _defaultFontSize,
+  static TextStyle extraExtraLargeSemiBold = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
     fontWeight: semiBold,
   );
-
-  static TextStyle dmSansNormalBold = _dmSansBase(
-    fontSize: _defaultFontSize,
+  static TextStyle extraExtraLargeBold = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
     fontWeight: bold,
   );
-
-  static TextStyle dmSansSmallRegular = _dmSansBase(
-    fontSize: _defaultFontSize * 0.875,
-    fontWeight: regular,
+  static TextStyle extraExtraLargeExtraBold = _defaultBase(
+    fontSize: extraExtraLargeFontSize,
+    fontWeight: extraBold,
   );
 
-  static TextStyle dmSansSmallSemiBold = _dmSansBase(
-    fontSize: _defaultFontSize * 0.875,
+  // Extra Large
+  static TextStyle extraLargeLight = _defaultBase(
+    fontSize: extraLargeFontSize,
+    fontWeight: light,
+  );
+  static TextStyle extraLargeRegular = _defaultBase(
+    fontSize: extraLargeFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle extraLargeMedium = _defaultBase(
+    fontSize: extraLargeFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle extraLargeSemiBold = _defaultBase(
+    fontSize: extraLargeFontSize,
     fontWeight: semiBold,
   );
-
-  static TextStyle dmSansSmallBold = _dmSansBase(
-    fontSize: _defaultFontSize * 0.875,
+  static TextStyle extraLargeBold = _defaultBase(
+    fontSize: extraLargeFontSize,
     fontWeight: bold,
   );
-
-  static TextStyle dmSansExtraSmallRegular = _dmSansBase(
-    fontSize: _defaultFontSize * 0.75,
-    fontWeight: regular,
+  static TextStyle extraLargeExtraBold = _defaultBase(
+    fontSize: extraLargeFontSize,
+    fontWeight: extraBold,
   );
 
-  static TextStyle dmSansMicroRegular = _dmSansBase(
-    fontSize: _defaultFontSize * 0.625,
+  // Large
+  static TextStyle largeLight = _defaultBase(
+    fontSize: largeFontSize,
+    fontWeight: light,
+  );
+  static TextStyle largeRegular = _defaultBase(
+    fontSize: largeFontSize,
     fontWeight: regular,
+  );
+  static TextStyle largeMedium = _defaultBase(
+    fontSize: largeFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle largeSemiBold = _defaultBase(
+    fontSize: largeFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle largeBold = _defaultBase(
+    fontSize: largeFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle largeExtraBold = _defaultBase(
+    fontSize: largeFontSize,
+    fontWeight: extraBold,
+  );
+
+  // Medium
+  static TextStyle mediumLight = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: light,
+  );
+  static TextStyle mediumRegular = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle mediumMedium = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle mediumSemiBold = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle mediumBold = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle mediumExtraBold = _defaultBase(
+    fontSize: mediumFontSize,
+    fontWeight: extraBold,
+  );
+
+  // Normal
+  static TextStyle normalLight = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: light,
+  );
+  static TextStyle normalRegular = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle normalMedium = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle normalSemiBold = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle normalBold = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle normalExtraBold = _defaultBase(
+    fontSize: defaultFontSize,
+    fontWeight: extraBold,
+  );
+
+  // Small
+  static TextStyle smallLight = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: light,
+  );
+  static TextStyle smallRegular = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle smallMedium = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle smallSemiBold = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle smallBold = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle smallExtraBold = _defaultBase(
+    fontSize: smallFontSize,
+    fontWeight: extraBold,
+  );
+
+  // Extra Small
+  static TextStyle extraSmallLight = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: light,
+  );
+  static TextStyle extraSmallRegular = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle extraSmallMedium = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle extraSmallSemiBold = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle extraSmallBold = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle extraSmallExtraBold = _defaultBase(
+    fontSize: extraSmallFontSize,
+    fontWeight: extraBold,
+  );
+
+  // Micro
+  static TextStyle microLight = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: light,
+  );
+  static TextStyle microRegular = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: regular,
+  );
+  static TextStyle microMedium = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: medium,
+  );
+  static TextStyle microSemiBold = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: semiBold,
+  );
+  static TextStyle microBold = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: bold,
+  );
+  static TextStyle microExtraBold = _defaultBase(
+    fontSize: microFontSize,
+    fontWeight: extraBold,
   );
 
   /// Roboto text styles
+  static TextStyle robotoExtraExtraLargeExtraBold = _robotoBase(
+    fontSize: extraExtraLargeFontSize,
+    fontWeight: extraBold,
+  );
 
   static TextStyle robotoExtraLargeBold = _robotoBase(
-    fontSize: _defaultFontSize * 1.25,
+    fontSize: extraLargeFontSize,
     fontWeight: bold,
   );
 
   static TextStyle robotoLargeMedium = _robotoBase(
-    fontSize: _defaultFontSize * 1.125,
+    fontSize: largeFontSize,
     fontWeight: medium,
   );
 
-  static TextStyle robotoNormalRegular = _robotoBase(
-    fontSize: _defaultFontSize,
+  static TextStyle robotoMediumRegular = _robotoBase(
+    fontSize: mediumFontSize,
     fontWeight: regular,
   );
 
   static TextStyle robotoSmallRegular = _robotoBase(
-    fontSize: _defaultFontSize * 0.875,
+    fontSize: smallFontSize,
     fontWeight: regular,
   );
 
   static TextStyle robotoExtraSmallRegular = _robotoBase(
-    fontSize: _defaultFontSize * 0.75,
+    fontSize: extraSmallFontSize,
     fontWeight: regular,
   );
 
   static TextStyle robotoMicroRegular = _robotoBase(
-    fontSize: _defaultFontSize * 0.625,
+    fontSize: microFontSize,
     fontWeight: regular,
-  );
-
-  static TextStyle robotoLargeBold = _robotoBase(
-    fontSize: _defaultFontSize * 1.125,
-    fontWeight: bold,
-  );
-
-  static TextStyle robotoNormalMedium = _robotoBase(
-    fontSize: _defaultFontSize,
-    fontWeight: medium,
-  );
-
-  static TextStyle robotoSmallMedium = _robotoBase(
-    fontSize: _defaultFontSize * 0.875,
-    fontWeight: medium,
-  );
-
-  static TextStyle robotoLargeSemiBold = _robotoBase(
-    fontSize: _defaultFontSize * 1.125,
-    fontWeight: semiBold,
-  );
-
-  static TextStyle robotoNormalBold = _robotoBase(
-    fontSize: _defaultFontSize,
-    fontWeight: bold,
-  );
-
-  static TextStyle robotoSmallBold = _robotoBase(
-    fontSize: _defaultFontSize * 0.875,
-    fontWeight: bold,
-  );
-
-  static TextStyle robotoExtraLargeExtraBold = _robotoBase(
-    fontSize: _defaultFontSize * 1.25,
-    fontWeight: extraBold,
-  );
-
-  static TextStyle robotoLargeExtraBold = _robotoBase(
-    fontSize: _defaultFontSize * 1.125,
-    fontWeight: extraBold,
-  );
-
-  static TextStyle robotoNormalExtraBold = _robotoBase(
-    fontSize: _defaultFontSize,
-    fontWeight: extraBold,
-  );
-
-  static TextStyle robotoSmallExtraBold = _robotoBase(
-    fontSize: _defaultFontSize * 0.875,
-    fontWeight: extraBold,
   );
 }

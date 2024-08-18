@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/configs/size_config.dart';
+import '../../../../core/resources/app_resources.dart';
 
 class IconWidget extends StatelessWidget {
   const IconWidget({
@@ -19,19 +19,19 @@ class IconWidget extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(
-              SizeConfig.width_8,
+              AppSizes.width_8,
             ),
-            height: SizeConfig.width_38,
-            width: SizeConfig.width_38,
+            height: AppSizes.width_38,
+            width: AppSizes.width_38,
             child: Image.asset(
               iconPath,
-              height: SizeConfig.width_16,
-              width: SizeConfig.width_16,
+              height: AppSizes.width_16,
+              width: AppSizes.width_16,
               fit: BoxFit.contain,
             ),
           ),
           SizedBox(
-            width: SizeConfig.width_8,
+            width: AppSizes.width_8,
           ),
         ],
       ),
