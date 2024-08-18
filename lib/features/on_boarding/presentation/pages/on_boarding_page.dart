@@ -59,7 +59,7 @@ class OnBoardingPage extends StatelessWidget {
                       AppSizes.v400,
                       AppSizes.v48,
                     ),
-                    backgroundColor: AppColors.skyBlue,
+                    backgroundColor: AppColors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         AppSizes.r4,
@@ -94,7 +94,7 @@ class OnBoardingPage extends StatelessWidget {
                         AppSizes.r4,
                       ),
                       side: const BorderSide(
-                        color: AppColors.skyBlue,
+                        color: AppColors.blue,
                       ),
                     ),
                   ),
@@ -102,7 +102,7 @@ class OnBoardingPage extends StatelessWidget {
                     AppStrings.signUp,
                     style: AppTextStyles.normalMedium.copyWith(
                       letterSpacing: 0.16,
-                      color: AppColors.skyBlue,
+                      color: AppColors.blue,
                     ),
                   ),
                 ),

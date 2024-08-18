@@ -1,5 +1,4 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
-
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/features/stage/features/appliances/presentation/pages/appliances_page.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/pages/home_page.dart';
@@ -26,74 +25,74 @@ class StageController extends GetxController {
     BottomNavigationBarItem(
       icon: Image.asset(
         AppIcons.homeInactive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.home,
       activeIcon: Image.asset(
         AppIcons.homeActive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
         AppIcons.usageInactive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.myUsage,
       activeIcon: Image.asset(
         AppIcons.usageActive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
         AppIcons.hydraInactive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.hydra,
       activeIcon: SizedBox(
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
         AppIcons.appliancesInactive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.appliances,
       activeIcon: Image.asset(
         AppIcons.appliancesActive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
     ),
     BottomNavigationBarItem(
       icon: Image.asset(
         AppIcons.profileInactive,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
       label: AppStrings.profile,
       activeIcon: Image.asset(
         AppIcons.profileInactive,
-        color: AppColors.skyBlue,
-        height: AppSizes.width_24,
-        width: AppSizes.width_24,
+        color: AppColors.blue,
+        height: AppSizes.w24,
+        width: AppSizes.w24,
         fit: BoxFit.contain,
       ),
     ),

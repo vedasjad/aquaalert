@@ -4,7 +4,7 @@ class AppGaps {
   AppGaps._();
 
   /// Horizontal gaps with width (w) from 2 to 50, using AppSizes for responsiveness.
-  static SizedBox w2 = SizedBox(width: AppSizes.width_2);
+  static SizedBox w2 = SizedBox(width: AppSizes.w2);
   static SizedBox w4 = SizedBox(width: AppSizes.width_4);
   static SizedBox w6 = SizedBox(width: AppSizes.width_6);
   static SizedBox w8 = SizedBox(width: AppSizes.width_8);
@@ -15,7 +15,7 @@ class AppGaps {
   static SizedBox w18 = SizedBox(width: AppSizes.width_18);
   static SizedBox w20 = SizedBox(width: AppSizes.w20);
   static SizedBox w22 = SizedBox(width: AppSizes.width_22);
-  static SizedBox w24 = SizedBox(width: AppSizes.width_24);
+  static SizedBox w24 = SizedBox(width: AppSizes.w24);
   static SizedBox w26 = SizedBox(width: AppSizes.width_26);
   static SizedBox w28 = SizedBox(width: AppSizes.width_28);
   static SizedBox w30 = SizedBox(width: AppSizes.width_30);

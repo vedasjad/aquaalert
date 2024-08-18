@@ -1,12 +1,16 @@
-import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/home_setup_page/home_setup_page.dart';
+import 'package:aquaalert/core/resources/app_resources.dart';
+import 'package:aquaalert/core/resources/resources.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../widgets/custom_text_field.dart';
+import '../home_setup_page/home_setup_page.dart';
 
 class LocationSetupPage extends StatefulWidget {
   const LocationSetupPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _LocationSetupPageState createState() => _LocationSetupPageState();
+  State<LocationSetupPage> createState() => _LocationSetupPageState();
 }
 
 class _LocationSetupPageState extends State<LocationSetupPage> {
@@ -16,224 +20,190 @@ class _LocationSetupPageState extends State<LocationSetupPage> {
   String areaLocality = '';
   String city = '';
   String state = '';
-  String pincode = '';
+  String pinCode = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.offWhite,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Image.asset(
+            AppIcons.arrowLeft,
+            color: AppColors.greyNeutral,
+            height: AppSizes.v24,
+            width: AppSizes.v24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () {
-            Navigator.pop(context); // Back navigation
+            Get.back();
           },
         ),
-        backgroundColor: Colors.white, // Set background color to white
+        backgroundColor: AppColors.white,
+        surfaceTintColor: AppColors.white,
+        elevation: 0,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    width: 327.50,
-                    child: Text(
-                      'Set your location',
-                      style: TextStyle(
-                        color: Color(0xFF161616),
-                        fontSize: 20,
-                        fontFamily: 'DM Sans',
-                        fontWeight: FontWeight.w700,
-                        height: 0.07,
-                        letterSpacing: -0.20,
-                      ),
-                    ),
+      body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
+        child: SizedBox(
+          height: AppSizes.getScreenHeight() -
+              kToolbarHeight -
+              kBottomNavigationBarHeight / 2,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: AppSizes.getScreenWidth(),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSizes.v20,
+                    vertical: AppSizes.v30,
                   ),
-                  const SizedBox(height: 20),
-                  const SizedBox(
-                    width: 327.50,
-                    child: Text(
-                      'Let’s get your location set up to keep you connected and informed.',
-                      style: TextStyle(
-                        color: Color(0xFF161616),
-                        fontSize: 14,
-                        fontFamily: 'DM Sans',
-                        fontWeight: FontWeight.w400,
-                        height: 1.5,
-                        letterSpacing: 0.14,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      // Implement location fetching logic here
-                    },
-                    icon:
-                        const Icon(Icons.location_on, color: Color(0xFF396AFC)),
-                    label: const Text(
-                      'Use my current location',
-                      style: TextStyle(
-                        color: Color(0xFF396AFC),
-                        fontSize: 14,
-                        fontFamily: 'DM Sans',
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: -0.14,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0,
-                      shadowColor: Colors.transparent,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'House/Flat no',
-                      labelStyle: TextStyle(color: Color(0xFFA8A8A8)),
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF396AFC)),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFA8A8A8)),
-                      ),
-                    ),
-                    onChanged: (value) => houseFlatNo = value,
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Area/Locality/Landmark',
-                      labelStyle: TextStyle(color: Color(0xFFA8A8A8)),
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF396AFC)),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFA8A8A8)),
-                      ),
-                    ),
-                    onChanged: (value) => areaLocality = value,
-                  ),
-                  const SizedBox(height: 20),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'City',
-                      labelStyle: TextStyle(color: Color(0xFFA8A8A8)),
-                      border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF396AFC)),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFA8A8A8)),
-                      ),
-                    ),
-                    onChanged: (value) => city = value,
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
+                  color: AppColors.white,
+                  child: Column(
                     children: [
-                      Expanded(
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'State',
-                            labelStyle: TextStyle(color: Color(0xFFA8A8A8)),
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF396AFC)),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFFA8A8A8)),
-                            ),
+                      SizedBox(
+                        width: AppSizes.w327,
+                        child: Text(
+                          AppStrings.setYourLocation,
+                          style: AppTextStyles.extraLargeBold.copyWith(
+                            height: 0.07,
+                            letterSpacing: -0.20,
                           ),
-                          onChanged: (value) => state = value,
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Pincode',
-                            labelStyle: TextStyle(color: Color(0xFFA8A8A8)),
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF396AFC)),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFFA8A8A8)),
-                            ),
+                      AppGaps.h20,
+                      SizedBox(
+                        width: AppSizes.w327,
+                        child: Text(
+                          AppStrings.setYourLocationDescription,
+                          style: AppTextStyles.normalRegular.copyWith(
+                            height: 1.5,
+                            letterSpacing: 0.14,
                           ),
-                          keyboardType: TextInputType.number,
-                          onChanged: (value) => pincode = value,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 30),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomeSetupPage(),
+                ),
+                AppGaps.h10,
+                Expanded(
+                  child: Container(
+                    width: AppSizes.getScreenWidth(),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSizes.v20,
+                      vertical: AppSizes.v30,
+                    ),
+                    color: AppColors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            AppIcons.gps,
+                            color: AppColors.blue,
+                            height: AppSizes.v24,
+                            width: AppSizes.v24,
+                            fit: BoxFit.contain,
                           ),
-                        );
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF396AFC),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                    child: Container(
-                      width: 327,
-                      height: 48,
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'Next',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'DM Sans',
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 0.16,
+                          label: Text(
+                            AppStrings.useMyCurrentLocation,
+                            style: AppTextStyles.normalMedium.copyWith(
+                              letterSpacing: -0.14,
+                              color: AppColors.blue,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            shadowColor: Colors.transparent,
+                            padding: EdgeInsets.zero,
+                          ),
                         ),
-                      ),
+                        AppGaps.h20,
+                        CustomTextField(
+                          label: AppStrings.houseOrFlatNo,
+                          onChanged: (value) => houseFlatNo = value,
+                        ),
+                        AppGaps.h20,
+                        CustomTextField(
+                          label: AppStrings.areaOrLocalityOrLandmark,
+                          onChanged: (value) => areaLocality = value,
+                        ),
+                        AppGaps.h20,
+                        CustomTextField(
+                          label: AppStrings.city,
+                          onChanged: (value) => city = value,
+                        ),
+                        AppGaps.h20,
+                        Row(
+                          children: [
+                            Expanded(
+                              child: CustomTextField(
+                                label: AppStrings.state,
+                                onChanged: (value) => state = value,
+                              ),
+                            ),
+                            AppGaps.w10,
+                            Expanded(
+                              child: CustomTextField(
+                                label: AppStrings.pinCode,
+                                keyboardType: TextInputType.number,
+                                onChanged: (value) => pinCode = value,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        ElevatedButton(
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              Get.to(() => const HomeSetupPage());
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                AppSizes.r4,
+                              ),
+                            ),
+                          ),
+                          child: Container(
+                            width: AppSizes.w327,
+                            height: AppSizes.h48,
+                            alignment: Alignment.center,
+                            child: Text(
+                              AppStrings.next,
+                              style: AppTextStyles.normalMedium.copyWith(
+                                letterSpacing: 0.16,
+                                color: AppColors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        AppGaps.h10,
+                        TextButton(
+                          onPressed: () {
+                            Get.to(() => const HomeSetupPage());
+                          },
+                          child: Center(
+                            child: Text(
+                              AppStrings.skip,
+                              style: AppTextStyles.normalMedium.copyWith(
+                                letterSpacing: 0.16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeSetupPage(),
-                        ),
-                      );
-                    },
-                    child: const Center(
-                      child: Text(
-                        'Skip',
-                        style: TextStyle(
-                          color: Color(0xFF161616),
-                          fontSize: 14,
-                          fontFamily: 'DM Sans',
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 0.16,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

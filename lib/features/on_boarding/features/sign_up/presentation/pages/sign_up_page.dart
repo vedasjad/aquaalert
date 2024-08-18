@@ -20,12 +20,17 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.white,
-      body: Padding(
-        padding: EdgeInsets.all(
-          AppSizes.v20,
-        ),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(
+            AppSizes.v20,
+            AppSizes.v20,
+            AppSizes.v20,
+            0,
+          ),
+          height: AppSizes.getScreenHeight() - kToolbarHeight,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -62,7 +67,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              AppGaps.h30,
+              const Spacer(),
               const CustomTextField(
                 label: AppStrings.name,
               ),
@@ -77,7 +82,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 label: AppStrings.otp,
                 keyboardType: TextInputType.number,
               ),
-              AppGaps.h30,
+              const Spacer(),
               Row(
                 children: [
                   Checkbox(
@@ -87,7 +92,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         agreeToPrivacy = value!;
                       });
                     },
-                    activeColor: AppColors.skyBlue,
+                    activeColor: AppColors.blue,
                   ),
                   Expanded(
                     child: Text(
@@ -106,7 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         agreeToDataProcessing = value!;
                       });
                     },
-                    activeColor: AppColors.skyBlue,
+                    activeColor: AppColors.blue,
                   ),
                   Expanded(
                     child: Text(
@@ -116,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              AppGaps.h30,
+              const Spacer(),
               ElevatedButton(
                 onPressed: agreeToPrivacy && agreeToDataProcessing
                     ? () {
@@ -128,7 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     AppSizes.w327,
                     AppSizes.h48,
                   ),
-                  backgroundColor: AppColors.skyBlue,
+                  backgroundColor: AppColors.blue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(AppSizes.r4),
                   ),
@@ -141,31 +146,28 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              AppGaps.h30,
-              Center(
-                child: TextButton(
-                  onPressed: () {
-                    Get.to(() => const LoginPage());
-                  },
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: AppStrings.alreadyHaveAccount,
-                          style: AppTextStyles.smallRegular.copyWith(
-                            letterSpacing: -0.12,
-                          ),
+              TextButton(
+                onPressed: () {
+                  Get.to(() => const LoginPage());
+                },
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: AppStrings.alreadyHaveAccount,
+                        style: AppTextStyles.smallRegular.copyWith(
+                          letterSpacing: -0.12,
                         ),
-                        TextSpan(
-                          text: AppStrings.logIn,
-                          style: AppTextStyles.smallMedium.copyWith(
-                            color: AppColors.skyBlue,
-                            decoration: TextDecoration.underline,
-                            letterSpacing: -0.12,
-                          ),
+                      ),
+                      TextSpan(
+                        text: AppStrings.logIn,
+                        style: AppTextStyles.smallMedium.copyWith(
+                          color: AppColors.blue,
+                          decoration: TextDecoration.underline,
+                          letterSpacing: -0.12,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

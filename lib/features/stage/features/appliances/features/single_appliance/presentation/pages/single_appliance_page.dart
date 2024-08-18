@@ -52,8 +52,8 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
             alignment: Alignment.center,
             child: Image.asset(
               AppIcons.arrowLeft,
-              height: AppSizes.width_24,
-              width: AppSizes.width_24,
+              height: AppSizes.w24,
+              width: AppSizes.w24,
               fit: BoxFit.contain,
             ),
           ),
@@ -97,7 +97,7 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: appliance.status.isRunning
-                              ? AppColors.skyBlue
+                              ? AppColors.blue
                               : AppColors.coolGrey,
                         ),
                       ),

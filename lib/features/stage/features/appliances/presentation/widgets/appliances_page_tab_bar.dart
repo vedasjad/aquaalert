@@ -35,7 +35,7 @@ class AppliancesPageTabBar extends StatelessWidget {
             )
             .toList(),
         controller: tabController,
-        indicatorColor: AppColors.skyBlue,
+        indicatorColor: AppColors.blue,
         indicatorWeight: 2,
         indicatorSize: TabBarIndicatorSize.label,
         onTap: (index) => controller.updateCurrentTabIndex(index),

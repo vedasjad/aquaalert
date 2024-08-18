@@ -63,7 +63,7 @@ class WaterFlowWidget extends StatelessWidget {
                               fit: BoxFit.contain,
                             ),
                             SizedBox(
-                              width: AppSizes.width_2,
+                              width: AppSizes.w2,
                             ),
                             Text(
                               AppStrings.running,
@@ -126,7 +126,7 @@ class WaterFlowWidget extends StatelessWidget {
                                     value: 6,
                                     animationDuration: 500,
                                     width: 0.17,
-                                    color: AppColors.skyBlue,
+                                    color: AppColors.blue,
                                     sizeUnit: GaugeSizeUnit.factor,
                                   ),
                                 ],
@@ -251,7 +251,7 @@ class WaterFlowWidget extends StatelessWidget {
                                 value: 6,
                                 animationDuration: 500,
                                 width: 0.17,
-                                color: AppColors.skyBlue,
+                                color: AppColors.blue,
                                 sizeUnit: GaugeSizeUnit.factor,
                               ),
                             ],

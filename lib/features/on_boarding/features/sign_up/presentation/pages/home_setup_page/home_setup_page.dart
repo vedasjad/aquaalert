@@ -1,11 +1,17 @@
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/appliances_setup_page/appliances_setup_page.dart';
+import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../../../../core/resources/app_resources.dart';
+import '../../../../../../../core/resources/resources.dart';
+import '../../widgets/home_setup_page/decrease_count_button.dart';
+import '../../widgets/home_setup_page/increase_count_button.dart';
 
 class HomeSetupPage extends StatefulWidget {
   const HomeSetupPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _HomeSetupPageState createState() => _HomeSetupPageState();
 }
 
@@ -16,239 +22,218 @@ class _HomeSetupPageState extends State<HomeSetupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.offWhite,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Image.asset(
+            AppIcons.arrowLeft,
+            color: AppColors.greyNeutral,
+            height: AppSizes.v24,
+            width: AppSizes.v24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () {
-            Navigator.pop(context); // Back navigation
+            Get.back();
           },
         ),
-        backgroundColor: Colors.white, // Set background color to white
+        backgroundColor: AppColors.white,
+        surfaceTintColor: AppColors.white,
+        elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              width: 327.50,
-              child: Text(
-                'Tell us about your home',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 20,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w700,
-                  height: 1.75,
-                  letterSpacing: -0.20,
+      body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
+        child: SizedBox(
+          height: AppSizes.getScreenHeight() -
+              kBottomNavigationBarHeight / 2 -
+              kToolbarHeight,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: AppSizes.getScreenWidth(),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSizes.v20,
+                  vertical: AppSizes.v30,
                 ),
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-              width: 327.50,
-              child: Text(
-                'Help us understand your home to optimize your water usage.',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 14,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w400,
-                  height: 1.75,
-                  letterSpacing: -0.14,
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            // Row for the question
-            const SizedBox(
-              width: 327.50,
-              child: Text(
-                'How many people live in your home?',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 16,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w400,
-                  height: 1.5,
-                  letterSpacing: 0.32,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            // Row for the - icon, input, and + icon
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.remove,
-                      size: 24,
-                      color: Color(
-                          0xFF161616)), // Increased size and color for - icon
-                  onPressed: () {
-                    setState(() {
-                      if (numberOfPeople > 1) numberOfPeople--;
-                    });
-                  },
-                ),
-                const SizedBox(
-                    width: 20), // Add spacing between - icon and input field
-                SizedBox(
-                  width: 50,
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                color: AppColors.white,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: AppSizes.w327,
+                      child: Text(
+                        AppStrings.tellUsAboutYourHome,
+                        style: AppTextStyles.extraLargeBold.copyWith(
+                          height: 0.07,
+                          letterSpacing: -0.20,
+                        ),
+                      ),
                     ),
-                    keyboardType: TextInputType.number,
-                    controller:
-                        TextEditingController(text: numberOfPeople.toString()),
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfPeople = int.tryParse(value) ?? numberOfPeople;
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(
-                    width: 20), // Add spacing between input field and + icon
-                IconButton(
-                  icon: const Icon(Icons.add,
-                      size: 24,
-                      color: Color(
-                          0xFF396AFC)), // Increased size and color for + icon
-                  onPressed: () {
-                    setState(() {
-                      numberOfPeople++;
-                    });
-                  },
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            // Row for the question
-            const SizedBox(
-              width: 327.50,
-              child: Text(
-                'How many bathrooms do you have?',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 16,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w400,
-                  height: 1.5,
-                  letterSpacing: 0.32,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            // Row for the - icon, input, and + icon
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.remove,
-                      size: 24,
-                      color: Color(
-                          0xFF161616)), // Increased size and color for - icon
-                  onPressed: () {
-                    setState(() {
-                      if (numberOfBathrooms > 0) numberOfBathrooms--;
-                    });
-                  },
-                ),
-                const SizedBox(
-                    width: 20), // Add spacing between - icon and input field
-                SizedBox(
-                  width: 50,
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                    AppGaps.h20,
+                    SizedBox(
+                      width: AppSizes.w327,
+                      child: Text(
+                        AppStrings.tellUsAboutYourHomeDescription,
+                        style: AppTextStyles.normalRegular.copyWith(
+                          height: 1.5,
+                          letterSpacing: 0.14,
+                        ),
+                      ),
                     ),
-                    keyboardType: TextInputType.number,
-                    controller: TextEditingController(
-                        text: numberOfBathrooms.toString()),
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfBathrooms =
-                            int.tryParse(value) ?? numberOfBathrooms;
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(
-                    width: 20), // Add spacing between input field and + icon
-                IconButton(
-                  icon: const Icon(Icons.add,
-                      size: 24,
-                      color: Color(
-                          0xFF396AFC)), // Increased size and color for + icon
-                  onPressed: () {
-                    setState(() {
-                      numberOfBathrooms++;
-                    });
-                  },
-                ),
-              ],
-            ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the AppliancesSelectedScreen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AppliancesSetupPage(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF396AFC),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
+                  ],
                 ),
               ),
-              child: Container(
-                width: 327,
-                height: 48,
-                alignment: Alignment.center,
-                child: const Text(
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontFamily: 'DM Sans',
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.16,
+              AppGaps.h10,
+              Expanded(
+                child: Container(
+                  color: AppColors.white,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppSizes.v20,
+                    vertical: AppSizes.v30,
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: AppSizes.w327,
+                        child: Text(
+                          AppStrings.howManyPeopleLiveInYourHome,
+                          style: AppTextStyles.mediumRegular.copyWith(
+                            height: 1.5,
+                            letterSpacing: 0.32,
+                          ),
+                        ),
+                      ),
+                      AppGaps.h10,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DecreaseCountButton(
+                            onTap: () {
+                              setState(() {
+                                if (numberOfPeople > 1) numberOfPeople--;
+                              });
+                            },
+                          ),
+                          AppGaps.w20,
+                          SizedBox(
+                            width: AppSizes.v50,
+                            height: AppSizes.v50,
+                            child: CustomTextField(
+                              textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
+                              controller: TextEditingController(
+                                text: numberOfPeople.toString(),
+                              ),
+                              onChanged: (value) {
+                                setState(() {
+                                  numberOfPeople =
+                                      int.tryParse(value) ?? numberOfPeople;
+                                });
+                              },
+                            ),
+                          ),
+                          AppGaps.w20,
+                          IncreaseCountButton(onTap: () {
+                            setState(() {
+                              numberOfPeople++;
+                            });
+                          }),
+                        ],
+                      ),
+                      AppGaps.h20,
+                      SizedBox(
+                        width: AppSizes.w327,
+                        child: Text(
+                          AppStrings.howManyBathRoomsDoYouHave,
+                          style: AppTextStyles.mediumRegular.copyWith(
+                            height: 1.5,
+                            letterSpacing: 0.32,
+                          ),
+                        ),
+                      ),
+                      AppGaps.h10,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DecreaseCountButton(
+                            onTap: () {
+                              setState(() {
+                                if (numberOfBathrooms > 1) numberOfBathrooms--;
+                              });
+                            },
+                          ),
+                          AppGaps.w20,
+                          SizedBox(
+                            width: AppSizes.v50,
+                            height: AppSizes.v50,
+                            child: CustomTextField(
+                              textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
+                              controller: TextEditingController(
+                                text: numberOfBathrooms.toString(),
+                              ),
+                              onChanged: (value) {
+                                setState(() {
+                                  numberOfBathrooms =
+                                      int.tryParse(value) ?? numberOfBathrooms;
+                                });
+                              },
+                            ),
+                          ),
+                          AppGaps.w20,
+                          IncreaseCountButton(onTap: () {
+                            setState(() {
+                              numberOfBathrooms++;
+                            });
+                          }),
+                        ],
+                      ),
+                      const Spacer(),
+                      ElevatedButton(
+                        onPressed: () {
+                          Get.to(() => const AppliancesSetupPage());
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              AppSizes.r4,
+                            ),
+                          ),
+                        ),
+                        child: Container(
+                          width: AppSizes.w327,
+                          height: AppSizes.h48,
+                          alignment: Alignment.center,
+                          child: Text(
+                            AppStrings.next,
+                            style: AppTextStyles.normalMedium.copyWith(
+                              letterSpacing: 0.16,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      AppGaps.h10,
+                      TextButton(
+                        onPressed: () {
+                          Get.to(() => const AppliancesSetupPage());
+                        },
+                        child: Center(
+                          child: Text(
+                            AppStrings.skip,
+                            style: AppTextStyles.normalMedium.copyWith(
+                              letterSpacing: 0.16,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeSetupPage(),
-                  ),
-                );
-              },
-              child: const Center(
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: Color(0xFF161616),
-                    fontSize: 14,
-                    fontFamily: 'DM Sans',
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.16,
-                  ),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

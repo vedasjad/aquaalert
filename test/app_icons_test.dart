@@ -14,6 +14,7 @@ void main() {
     expect(File(AppIcons.drop).existsSync(), isTrue);
     expect(File(AppIcons.faucet).existsSync(), isTrue);
     expect(File(AppIcons.filter).existsSync(), isTrue);
+    expect(File(AppIcons.gps).existsSync(), isTrue);
     expect(File(AppIcons.grid).existsSync(), isTrue);
     expect(File(AppIcons.heartRounded).existsSync(), isTrue);
     expect(File(AppIcons.homeActive).existsSync(), isTrue);

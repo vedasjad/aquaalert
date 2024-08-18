@@ -174,7 +174,7 @@ class NemoPage extends StatelessWidget {
                                   height: AppSizes.width_12,
                                   width: AppSizes.width_3,
                                   margin: EdgeInsets.symmetric(
-                                    horizontal: AppSizes.width_2,
+                                    horizontal: AppSizes.w2,
                                   ),
                                   decoration: BoxDecoration(
                                     color: index % 8 == 0

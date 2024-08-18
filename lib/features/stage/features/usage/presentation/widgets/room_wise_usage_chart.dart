@@ -58,7 +58,7 @@ class RoomWiseUsageChart extends StatelessWidget {
                   border: Border(
                     bottom: BorderSide(
                       color: sector.color,
-                      width: AppSizes.width_2,
+                      width: AppSizes.w2,
                     ),
                   ),
                 ),

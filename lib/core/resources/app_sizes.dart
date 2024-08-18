@@ -60,7 +60,7 @@ class AppSizes {
   static final double height_50 = 50.h;
   static final double height_64 = 64.h;
 
-  static final double width_2 = 2.w;
+  static final double w2 = 2.w;
   static final double width_3 = 3.w;
   static final double width_4 = 4.w;
   static final double width_6 = 6.w;
@@ -72,7 +72,7 @@ class AppSizes {
   static final double width_18 = 18.w;
   static final double w20 = 20.w;
   static final double width_22 = 22.w;
-  static final double width_24 = 24.w;
+  static final double w24 = 24.w;
   static final double width_26 = 26.w;
   static final double width_28 = 28.w;
   static final double width_30 = 30.w;
@@ -104,6 +104,7 @@ class AppSizes {
 
   // Radius
   static final double radius_2 = 2.r;
+  static final double r3 = 3.r;
   static final double r4 = 4.r;
   static final double radius_6 = 6.r;
   static final double radius_8 = 8.r;
@@ -130,7 +131,7 @@ class AppSizes {
   static final double radius_50 = 50.r;
 
   // Getters for width with value prefix
-  static double get value2 => width_2;
+  static double get value2 => w2;
   static double get value3 => width_3;
   static double get value4 => width_4;
   static double get value6 => width_6;
@@ -142,7 +143,7 @@ class AppSizes {
   static double get value18 => width_18;
   static double get v20 => w20;
   static double get value22 => width_22;
-  static double get value24 => width_24;
+  static double get v24 => w24;
   static double get value26 => width_26;
   static double get value28 => width_28;
   static double get v30 => width_30;
@@ -156,7 +157,7 @@ class AppSizes {
   static double get value44 => width_44;
   static double get value46 => width_46;
   static double get v48 => width_48;
-  static double get value50 => width_50;
+  static double get v50 => width_50;
   static double get value54 => width_54;
   static double get value60 => width_60;
   static double get value70 => width_70;

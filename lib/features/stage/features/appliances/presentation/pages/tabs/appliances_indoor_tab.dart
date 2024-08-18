@@ -29,13 +29,13 @@ class AppliancesIndoorTab extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.add,
-                      color: AppColors.skyBlue,
+                      color: AppColors.blue,
                       size: AppSizes.w20,
                     ),
                     Text(
                       AppStrings.add,
                       style: AppTextStyles.largeMedium.copyWith(
-                        color: AppColors.skyBlue,
+                        color: AppColors.blue,
                       ),
                     )
                   ],
@@ -45,8 +45,8 @@ class AppliancesIndoorTab extends StatelessWidget {
                 children: [
                   Image.asset(
                     AppIcons.rowsVertical,
-                    height: AppSizes.width_24,
-                    width: AppSizes.width_24,
+                    height: AppSizes.w24,
+                    width: AppSizes.w24,
                     fit: BoxFit.contain,
                   ),
                   SizedBox(
@@ -54,8 +54,8 @@ class AppliancesIndoorTab extends StatelessWidget {
                   ),
                   Image.asset(
                     AppIcons.grid,
-                    height: AppSizes.width_24,
-                    width: AppSizes.width_24,
+                    height: AppSizes.w24,
+                    width: AppSizes.w24,
                     fit: BoxFit.contain,
                   ),
                 ],

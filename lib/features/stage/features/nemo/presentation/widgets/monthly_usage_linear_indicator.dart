@@ -52,7 +52,7 @@ class MonthlyUsageLinearIndicator extends StatelessWidget {
             AppSizes.radius_22,
           ),
           padding: EdgeInsets.zero,
-          progressColor: AppColors.skyBlue,
+          progressColor: AppColors.blue,
           backgroundColor: AppColors.offWhite,
         ),
       ],

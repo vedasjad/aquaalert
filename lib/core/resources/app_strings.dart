@@ -74,4 +74,21 @@ class AppStrings {
   static const appDescription =
       'Track your water usage effortlessly, receive real-time alerts, and take control of your water management.';
   static const isNewUser = 'New user?';
+  static const setYourLocation = "Set your location";
+  static const setYourLocationDescription =
+      "Let’s get your location set up to keep you connected and informed.";
+  static const useMyCurrentLocation = "Use my current location";
+  static const houseOrFlatNo = "House/Flat no";
+  static const areaOrLocalityOrLandmark = "Area/Locality/Landmark";
+  static const city = "City";
+  static const state = "State";
+  static const pinCode = "PinCode";
+  static const next = "Next";
+  static const skip = "Skip";
+  static const tellUsAboutYourHome = "Tell us about your home";
+  static const tellUsAboutYourHomeDescription =
+      "Help us understand your home to optimize your water usage.";
+  static const howManyPeopleLiveInYourHome =
+      "How many people live in your home?";
+  static const howManyBathRoomsDoYouHave = "How many bathrooms do you have?";
 }

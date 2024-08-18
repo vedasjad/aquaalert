@@ -62,7 +62,7 @@ class ApplianceTile extends StatelessWidget {
               height: AppSizes.width_70,
               margin: EdgeInsets.only(
                 top: AppSizes.width_12,
-                left: AppSizes.width_2,
+                left: AppSizes.w2,
               ),
               padding: EdgeInsets.all(
                 AppSizes.width_12,
@@ -100,7 +100,7 @@ class ApplianceTile extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: appliance.status.isRunning
-                                  ? AppColors.skyBlue
+                                  ? AppColors.blue
                                   : AppColors.coolGrey,
                             ),
                           ),

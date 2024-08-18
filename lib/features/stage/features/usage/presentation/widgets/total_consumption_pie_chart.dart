@@ -96,7 +96,7 @@ class TotalConsumptionPieChart extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: sector.color,
-                            width: AppSizes.width_2,
+                            width: AppSizes.w2,
                           ),
                         ),
                       ),

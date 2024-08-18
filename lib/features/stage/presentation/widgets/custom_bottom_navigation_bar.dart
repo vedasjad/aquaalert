@@ -51,10 +51,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
               onTap: (index) {
                 controller.updateSelectedBNBIndex(index);
               },
-              selectedItemColor: AppColors.skyBlue,
+              selectedItemColor: AppColors.blue,
               unselectedItemColor: AppColors.blackMatte,
               selectedLabelStyle: AppTextStyles.smallRegular.copyWith(
-                color: AppColors.skyBlue,
+                color: AppColors.blue,
               ),
               unselectedLabelStyle: AppTextStyles.smallRegular.copyWith(
                 color: AppColors.blackMatte,
@@ -68,7 +68,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
         if (controller.selectedBNBIndex.value == 2)
           Positioned(
-            bottom: AppSizes.width_24,
+            bottom: AppSizes.w24,
             left: MediaQuery.of(context).size.width / 2 -
                 AppSizes.width_22, // Adjust to center
             child: GestureDetector(

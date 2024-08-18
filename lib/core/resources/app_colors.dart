@@ -34,6 +34,6 @@ class AppColors {
   static const white2 = Color(0xffE1E3E8);
   static const red = Color(0xffAF1C1C);
   static const redLight = Color(0xffFFF0F0);
-  static const skyBlue = Color(0xff396AFC);
+  static const blue = Color(0xff396AFC);
   static const slate500 = Color(0xff64748B);
 }

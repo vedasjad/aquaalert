@@ -50,7 +50,7 @@ class PeriodicUsageBarCharts extends StatelessWidget {
                 bottomTitles: AxisTitles(
                   sideTitles: SideTitles(
                     showTitles: true,
-                    reservedSize: AppSizes.width_24,
+                    reservedSize: AppSizes.w24,
                     interval: 7,
                     getTitlesWidget: (value, meta) {
                       switch (value.toInt()) {
@@ -124,11 +124,11 @@ class PeriodicUsageBarCharts extends StatelessWidget {
       (point) {
         return BarChartGroupData(
           x: point.x.toInt(),
-          barsSpace: AppSizes.width_2,
+          barsSpace: AppSizes.w2,
           barRods: [
             BarChartRodData(
               toY: point.y.toDouble(),
-              color: AppColors.skyBlue,
+              color: AppColors.blue,
               width: AppSizes.width_6,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(
