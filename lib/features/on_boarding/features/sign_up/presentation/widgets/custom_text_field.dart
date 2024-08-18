@@ -75,6 +75,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
           labelStyle: AppTextStyles.normalRegular.copyWith(
             color: AppColors.greyDavy,
           ),
+          prefixText: widget.prefixText,
+          prefixStyle: AppTextStyles.normalBold,
           floatingLabelStyle: AppTextStyles.mediumRegular.copyWith(
             color: AppColors.greyDavy,
           ),

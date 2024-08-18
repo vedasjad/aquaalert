@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      initialRoute: kDebugMode ? AppRoutes.stage : AppRoutes.onBoarding,
+      initialRoute: kDebugMode ? AppRoutes.onBoarding : AppRoutes.onBoarding,
       getPages: AppPages.pages,
       initialBinding: AppBinding(),
       debugShowCheckedModeBanner: false,

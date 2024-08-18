@@ -68,7 +68,7 @@ class AppStrings {
       'I agree to Privacy Policy and Terms of Use';
   static const agreePersonalData =
       'I agree to the processing of my personal data for app functions.';
-  static const signMeUp = "Sign me up";
+  static const getOTP = "Get OTP";
   static const alreadyHaveAccount = 'Already have an account? ';
   static const logIn = 'Log in';
   static const appDescription =
@@ -95,4 +95,5 @@ class AppStrings {
   static const yourHomeAppliancesDescription =
       'Select the appliances you use to track water usage accurately.';
   static const hourly = "Hourly";
+  static const submit = "Submit";
 }

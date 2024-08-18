@@ -8,5 +8,6 @@ void main() {
     expect(File(AppImages.a1_).existsSync(), isTrue);
     expect(File(AppImages.a).existsSync(), isTrue);
     expect(File(AppImages.aquaAlert).existsSync(), isTrue);
+    expect(File(AppImages.white).existsSync(), isTrue);
   });
 }

@@ -1,10 +1,11 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/features/on_boarding/features/login/presentation/pages/login_page.dart';
-import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/location_setup_page/location_setup_page.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'fill_otp_page/fill_otp_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -14,9 +15,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  bool agreeToPrivacy = false;
-  bool agreeToDataProcessing = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,57 +75,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 prefixText: '+91 ',
                 keyboardType: TextInputType.phone,
               ),
-              AppGaps.h30,
-              const CustomTextField(
-                label: AppStrings.otp,
-                keyboardType: TextInputType.number,
-              ),
-              const Spacer(),
-              Row(
-                children: [
-                  Checkbox(
-                    value: agreeToPrivacy,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        agreeToPrivacy = value!;
-                      });
-                    },
-                    activeColor: AppColors.blue,
-                  ),
-                  Expanded(
-                    child: Text(
-                      AppStrings.agreePrivacyPolicy,
-                      style: AppTextStyles.normalMedium,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: agreeToDataProcessing,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        agreeToDataProcessing = value!;
-                      });
-                    },
-                    activeColor: AppColors.blue,
-                  ),
-                  Expanded(
-                    child: Text(
-                      AppStrings.agreePersonalData,
-                      style: AppTextStyles.normalMedium,
-                    ),
-                  ),
-                ],
-              ),
               const Spacer(),
               ElevatedButton(
-                onPressed: agreeToPrivacy && agreeToDataProcessing
-                    ? () {
-                        Get.to(() => const LocationSetupPage());
-                      }
-                    : null,
+                onPressed: () {
+                  Get.to(() => FillOTPPage());
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(
                     AppSizes.w327,
@@ -139,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
                 child: Text(
-                  AppStrings.signMeUp,
+                  AppStrings.getOTP,
                   style: AppTextStyles.normalMedium.copyWith(
                     color: AppColors.white,
                     letterSpacing: 0.16,
