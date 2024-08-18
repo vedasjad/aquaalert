@@ -10,7 +10,7 @@ class AuthRoutes {
     GetPage(
       name: login,
       page: () => const LoginPage(),
-      binding: AuthBinding(),
+      binding: OnBoardingBinding(),
     ),
   ];
 }

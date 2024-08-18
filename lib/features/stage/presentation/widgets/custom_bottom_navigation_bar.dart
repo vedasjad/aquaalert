@@ -29,20 +29,20 @@ class CustomBottomNavigationBar extends StatelessWidget {
             ],
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
-                AppSizes.radius_10,
+                AppSizes.r10,
               ),
               topRight: Radius.circular(
-                AppSizes.radius_10,
+                AppSizes.r10,
               ),
             ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(
-                AppSizes.radius_10,
+                AppSizes.r10,
               ),
               topRight: Radius.circular(
-                AppSizes.radius_10,
+                AppSizes.r10,
               ),
             ),
             child: BottomNavigationBar(

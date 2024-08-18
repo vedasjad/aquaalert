@@ -1,8 +1,11 @@
-import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/home_setup_page/home_setup_page.dart';
+import 'package:aquaalert/app/routes/app_routes.dart';
+import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/controllers/appliances_setup_page/appliances_setup_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../../app/routes/app_routes.dart';
+import '../../../../../../../core/resources/app_resources.dart';
+import '../../../../../../../core/resources/resources.dart';
+import '../../widgets/appliances_setup_page/appliances_setup_page_tab_bar.dart';
 
 class AppliancesSetupPage extends StatefulWidget {
   const AppliancesSetupPage({super.key});
@@ -17,14 +20,34 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
   final Set<String> _selectedIndoorAppliances = <String>{};
   final Set<String> _selectedOutdoorAppliances = <String>{};
 
-  final List<Map<String, dynamic>> appliances = [
-    {'name': 'Faucet', 'icon': Icons.water_damage},
-    {'name': 'Washing machine', 'icon': Icons.local_laundry_service},
-    {'name': 'Bathtub', 'icon': Icons.bathtub},
-    {'name': 'Shower', 'icon': Icons.shower},
-    {'name': 'Dishwasher', 'icon': Icons.kitchen},
-    {'name': 'RO System', 'icon': Icons.water},
+  final List<Map<String, String>> appliances = [
+    {
+      'name': 'Faucet',
+      'icon': AppIcons.faucet,
+    },
+    {
+      'name': 'Washing machine',
+      'icon': AppIcons.washingMachine,
+    },
+    {
+      'name': 'Bathtub',
+      'icon': AppIcons.washingMachine,
+    },
+    {
+      'name': 'Shower',
+      'icon': AppIcons.shower,
+    },
+    {
+      'name': 'Dishwasher',
+      'icon': AppIcons.shower,
+    },
+    {
+      'name': 'RO System',
+      'icon': AppIcons.rOSystem,
+    },
   ];
+
+  final AppliancesSetupPageController controller = Get.find();
 
   @override
   void initState() {
@@ -41,118 +64,134 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.offWhite,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Image.asset(
+            AppIcons.arrowLeft,
+            color: AppColors.greyNeutral,
+            height: AppSizes.v24,
+            width: AppSizes.v24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () {
-            Navigator.pop(context); // Back navigation
+            Get.back();
           },
         ),
-        backgroundColor: Colors.white, // Set background color to white
+        backgroundColor: AppColors.white,
+        surfaceTintColor: AppColors.white,
+        elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SizedBox(
+        height: AppSizes.getScreenHeight() -
+            kBottomNavigationBarHeight / 2 -
+            kToolbarHeight,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              width: 327.50,
-              child: Text(
-                'Your home appliances',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 20,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w700,
-                  height: 1.75,
-                  letterSpacing: -0.20,
-                ),
+            Container(
+              width: AppSizes.getScreenWidth(),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSizes.v20,
+                vertical: AppSizes.v30,
               ),
-            ),
-            const SizedBox(
-              height: 30,
-              width: 327.50,
-              child: Text(
-                'Select the appliances you use to track water usage accurately.',
-                style: TextStyle(
-                  color: Color(0xFF161616),
-                  fontSize: 14,
-                  fontFamily: 'DM Sans',
-                  fontWeight: FontWeight.w400,
-                  height: 1.75,
-                  letterSpacing: -0.14,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            TabBar(
-              controller: _tabController,
-              tabs: const [
-                Tab(text: 'Indoor'),
-                Tab(text: 'Outdoor'),
-              ],
-              labelColor: const Color(0xFF396AFC),
-              unselectedLabelColor: Colors.black,
-              indicatorColor: const Color(0xFF396AFC),
-            ),
-            const SizedBox(height: 20), // Space between TabBar and grid
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
+              color: AppColors.white,
+              child: Column(
                 children: [
-                  _buildApplianceGrid(_selectedIndoorAppliances),
-                  _buildApplianceGrid(_selectedOutdoorAppliances),
+                  SizedBox(
+                    width: AppSizes.w327,
+                    child: Text(
+                      AppStrings.yourHomeAppliances,
+                      style: AppTextStyles.extraLargeBold.copyWith(
+                        height: 0.07,
+                        letterSpacing: -0.20,
+                      ),
+                    ),
+                  ),
+                  AppGaps.h20,
+                  SizedBox(
+                    width: AppSizes.w327,
+                    child: Text(
+                      AppStrings.yourHomeAppliancesDescription,
+                      style: AppTextStyles.normalRegular.copyWith(
+                        height: 1.5,
+                        letterSpacing: 0.14,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Get.offAllNamed(AppRoutes.stage);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF396AFC), // Button color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              ),
+            AppliancesSetupPageTabBar(
+              controller: controller,
+              tabController: _tabController,
+            ),
+            Expanded(
               child: Container(
-                width: 327,
-                height: 48,
-                alignment: Alignment.center,
-                child: const Text(
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontFamily: 'DM Sans',
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.16,
-                  ),
+                width: AppSizes.getScreenWidth(),
+                color: AppColors.white,
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSizes.v20,
+                ),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildApplianceGrid(_selectedIndoorAppliances),
+                    _buildApplianceGrid(_selectedOutdoorAppliances),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeSetupPage(),
+            Container(
+              width: AppSizes.getScreenWidth(),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSizes.v20,
+                vertical: AppSizes.v10,
+              ),
+              color: AppColors.white,
+              child: Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.offAllNamed(AppRoutes.stage);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          AppSizes.r4,
+                        ),
+                      ),
+                    ),
+                    child: Container(
+                      width: AppSizes.w327,
+                      height: AppSizes.h48,
+                      alignment: Alignment.center,
+                      child: Text(
+                        AppStrings.next,
+                        style: AppTextStyles.normalMedium.copyWith(
+                          letterSpacing: 0.16,
+                          color: AppColors.white,
+                        ),
+                      ),
+                    ),
                   ),
-                );
-              },
-              child: const Center(
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: Color(0xFF161616),
-                    fontSize: 14,
-                    fontFamily: 'DM Sans',
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.16,
+                  AppGaps.h10,
+                  TextButton(
+                    onPressed: () {
+                      Get.offAllNamed(AppRoutes.stage);
+                    },
+                    child: Center(
+                      child: Text(
+                        AppStrings.skip,
+                        style: AppTextStyles.normalMedium.copyWith(
+                          letterSpacing: 0.16,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ],
@@ -178,41 +217,43 @@ class _AppliancesSetupPageState extends State<AppliancesSetupPage>
               if (isSelected) {
                 selectedAppliances.remove(appliance['name']);
               } else {
-                // Ensure that selecting an appliance in one tab
-                // does not select it in the other tab
                 if (_tabController.index == 0) {
                   _selectedOutdoorAppliances.remove(appliance['name']);
                 } else {
                   _selectedIndoorAppliances.remove(appliance['name']);
                 }
-                selectedAppliances.add(appliance['name']);
+                selectedAppliances.add(appliance['name']!);
               }
             });
           },
           child: Container(
+            margin: EdgeInsets.only(
+              top: AppSizes.v20,
+            ),
             decoration: BoxDecoration(
-              color: isSelected ? Colors.blueAccent : Colors.grey[200],
-              borderRadius: BorderRadius.circular(10),
+              color: isSelected ? AppColors.blueLight : AppColors.offWhite,
+              borderRadius: BorderRadius.circular(
+                AppSizes.r10,
+              ),
               border: Border.all(
-                color: isSelected ? const Color(0xFF396AFC) : Colors.grey,
-                width: 2,
+                color: isSelected ? AppColors.blue : Colors.transparent,
+                width: 1,
               ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  appliance['icon'],
-                  size: 40,
-                  color: isSelected ? Colors.white : Colors.black,
+                Image.asset(
+                  appliance['icon']!,
+                  height: AppSizes.v50,
+                  width: AppSizes.v50,
+                  fit: BoxFit.contain,
+                  color: AppColors.blackMatte,
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  appliance['name'],
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: isSelected ? Colors.white : Colors.black,
-                  ),
+                  appliance['name']!,
+                  style: AppTextStyles.mediumMedium,
                   textAlign: TextAlign.center,
                 ),
               ],

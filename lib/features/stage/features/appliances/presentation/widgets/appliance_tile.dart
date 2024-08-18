@@ -40,10 +40,10 @@ class ApplianceTile extends StatelessWidget {
                 color: AppColors.offWhite,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(
-                    AppSizes.radius_10,
+                    AppSizes.r10,
                   ),
                   bottomLeft: Radius.circular(
-                    AppSizes.radius_10,
+                    AppSizes.r10,
                   ),
                 ),
               ),
@@ -71,10 +71,10 @@ class ApplianceTile extends StatelessWidget {
                 color: AppColors.offWhite,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(
-                    AppSizes.radius_10,
+                    AppSizes.r10,
                   ),
                   bottomRight: Radius.circular(
-                    AppSizes.radius_10,
+                    AppSizes.r10,
                   ),
                 ),
               ),

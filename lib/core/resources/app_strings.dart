@@ -91,4 +91,7 @@ class AppStrings {
   static const howManyPeopleLiveInYourHome =
       "How many people live in your home?";
   static const howManyBathRoomsDoYouHave = "How many bathrooms do you have?";
+  static const yourHomeAppliances = 'Your home appliances';
+  static const yourHomeAppliancesDescription =
+      'Select the appliances you use to track water usage accurately.';
 }

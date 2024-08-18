@@ -108,7 +108,7 @@ class AppSizes {
   static final double r4 = 4.r;
   static final double radius_6 = 6.r;
   static final double radius_8 = 8.r;
-  static final double radius_10 = 10.r;
+  static final double r10 = 10.r;
   static final double radius_12 = 12.r;
   static final double radius_14 = 14.r;
   static final double radius_16 = 16.r;
@@ -136,7 +136,7 @@ class AppSizes {
   static double get value4 => width_4;
   static double get value6 => width_6;
   static double get value8 => width_8;
-  static double get value10 => w10;
+  static double get v10 => w10;
   static double get value12 => width_12;
   static double get value14 => width_14;
   static double get value16 => width_16;
@@ -152,7 +152,7 @@ class AppSizes {
   static double get value35 => width_35;
   static double get value36 => width_36;
   static double get value38 => width_38;
-  static double get value40 => width_40;
+  static double get v40 => width_40;
   static double get value42 => width_42;
   static double get value44 => width_44;
   static double get value46 => width_46;

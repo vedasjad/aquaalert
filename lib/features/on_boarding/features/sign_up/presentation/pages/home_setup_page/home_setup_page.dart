@@ -1,3 +1,4 @@
+import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/bindings/appliances_setup_page/appliances_setup_page_binding.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/appliances_setup_page/appliances_setup_page.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -191,7 +192,10 @@ class _HomeSetupPageState extends State<HomeSetupPage> {
                       const Spacer(),
                       ElevatedButton(
                         onPressed: () {
-                          Get.to(() => const AppliancesSetupPage());
+                          Get.to(
+                            () => const AppliancesSetupPage(),
+                            binding: AppliancesSetupPageBinding(),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.blue,
@@ -217,7 +221,10 @@ class _HomeSetupPageState extends State<HomeSetupPage> {
                       AppGaps.h10,
                       TextButton(
                         onPressed: () {
-                          Get.to(() => const AppliancesSetupPage());
+                          Get.to(
+                            () => const AppliancesSetupPage(),
+                            binding: AppliancesSetupPageBinding(),
+                          );
                         },
                         child: Center(
                           child: Text(
