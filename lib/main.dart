@@ -16,7 +16,6 @@ void main() {
 
   OnBoardingModule().init();
   AppliancesModule().init();
-  // HomeModule().init();
 
   runApp(const MyApp());
 }

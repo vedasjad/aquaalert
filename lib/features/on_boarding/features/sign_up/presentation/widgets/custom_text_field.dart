@@ -56,12 +56,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
           bottom: _isFocused
               ? BorderSide(
                   color: AppColors.blue,
-                  width: AppSizes.value2,
+                  width: AppSizes.v2,
                 )
               : BorderSide.none,
         ),
         borderRadius: BorderRadius.circular(
-          AppSizes.radius_6,
+          AppSizes.r6,
         ),
       ),
       child: TextField(

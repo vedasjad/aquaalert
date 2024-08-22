@@ -19,7 +19,7 @@ class PeriodicUsageBarCharts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: AppSizes.width_8),
+      margin: EdgeInsets.only(top: AppSizes.w8),
       width: AppSizes.getScreenWidth() * 0.75,
       height: AppSizes.getScreenWidth() * 0.55,
       child: PageView(
@@ -91,7 +91,7 @@ class PeriodicUsageBarCharts extends StatelessWidget {
                 leftTitles: AxisTitles(
                   sideTitles: SideTitles(
                     showTitles: true,
-                    reservedSize: AppSizes.width_35,
+                    reservedSize: AppSizes.w35,
                     interval: 50,
                     getTitlesWidget: (value, meta) {
                       return SideTitleWidget(
@@ -129,13 +129,13 @@ class PeriodicUsageBarCharts extends StatelessWidget {
             BarChartRodData(
               toY: point.y.toDouble(),
               color: AppColors.blue,
-              width: AppSizes.width_6,
+              width: AppSizes.w6,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(
-                  AppSizes.radius_2,
+                  AppSizes.r2,
                 ),
                 topRight: Radius.circular(
-                  AppSizes.radius_2,
+                  AppSizes.r2,
                 ),
               ),
             ),

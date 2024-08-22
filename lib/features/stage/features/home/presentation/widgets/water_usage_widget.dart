@@ -18,7 +18,7 @@ class WaterUsageWidget extends StatelessWidget {
             width: AppSizes.getScreenWidth(),
             color: AppColors.white,
             padding: EdgeInsets.all(
-              AppSizes.width_14,
+              AppSizes.w14,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -50,7 +50,7 @@ class WaterUsageWidget extends StatelessWidget {
                   children: [
                     Container(
                       margin: EdgeInsets.only(
-                        top: AppSizes.height_8,
+                        top: AppSizes.h8,
                       ),
                       height: AppSizes.h110,
                       width: AppSizes.w120,
@@ -127,7 +127,7 @@ class WaterUsageWidget extends StatelessWidget {
             width: AppSizes.getScreenWidth() / 2.05,
             color: AppColors.white,
             padding: EdgeInsets.all(
-              AppSizes.width_14,
+              AppSizes.w14,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -156,8 +156,8 @@ class WaterUsageWidget extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                    top: AppSizes.height_8,
-                    bottom: AppSizes.height_8,
+                    top: AppSizes.h8,
+                    bottom: AppSizes.h8,
                   ),
                   height: AppSizes.v100,
                   width: AppSizes.v100,

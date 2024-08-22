@@ -20,11 +20,11 @@ class UsageTabBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(
-            AppSizes.radius_14,
+            AppSizes.r14,
           ),
         ),
         margin: EdgeInsets.only(
-          top: AppSizes.width_8,
+          top: AppSizes.w8,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,13 +38,13 @@ class UsageTabBar extends StatelessWidget {
                   width: AppSizes.getScreenWidth() * 0.8 / 3,
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSizes.w20,
-                    vertical: AppSizes.width_8,
+                    vertical: AppSizes.w8,
                   ),
                   decoration: tab.isSelected
                       ? BoxDecoration(
                           color: AppColors.offWhite,
                           borderRadius: BorderRadius.circular(
-                            AppSizes.radius_12,
+                            AppSizes.r12,
                           ),
                         )
                       : null,

@@ -19,10 +19,10 @@ class IconWidget extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(
-              AppSizes.width_8,
+              AppSizes.w8,
             ),
-            height: AppSizes.width_38,
-            width: AppSizes.width_38,
+            height: AppSizes.w38,
+            width: AppSizes.w38,
             child: Image.asset(
               iconPath,
               height: AppSizes.w16,
@@ -31,7 +31,7 @@ class IconWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: AppSizes.width_8,
+            width: AppSizes.w8,
           ),
         ],
       ),

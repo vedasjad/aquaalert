@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                 Container(
                   width: AppSizes.getScreenWidth(),
                   padding: EdgeInsets.symmetric(
-                    vertical: AppSizes.width_8,
+                    vertical: AppSizes.w8,
                   ),
                   color: AppColors.white,
                   alignment: Alignment.center,

@@ -61,7 +61,7 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
             ),
           ),
         ),
-        leadingWidth: AppSizes.width_46,
+        leadingWidth: AppSizes.w46,
         title: Text(
           operationalAppliance.appliance.name,
           style: AppTextStyles.largeBold.copyWith(
@@ -89,11 +89,11 @@ class _SingleAppliancePageState extends State<SingleAppliancePage>
                   Row(
                     children: [
                       SizedBox(
-                        width: AppSizes.width_32,
+                        width: AppSizes.w32,
                       ),
                       Container(
-                        height: AppSizes.width_6,
-                        width: AppSizes.width_6,
+                        height: AppSizes.w6,
+                        width: AppSizes.w6,
                         margin: EdgeInsets.only(
                           right: AppSizes.w4,
                         ),

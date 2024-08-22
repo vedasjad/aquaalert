@@ -18,19 +18,23 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           const Spacer(),
           Image.asset(
-            AppImages.a,
+            AppImages.aquaAlertLogo,
             height: AppSizes.v100,
             width: AppSizes.v100,
+            fit: BoxFit.contain,
           ),
           AppGaps.h20,
           Image.asset(
-            AppImages.aquaAlert,
+            AppImages.aquaAlertTitle,
             height: AppSizes.v100,
-            width: AppSizes.v300,
+            width: AppSizes.v200,
+            fit: BoxFit.contain,
           ),
           AppGaps.h20,
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSizes.v30),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSizes.v30,
+            ),
             child: SizedBox(
               width: AppSizes.w238,
               child: Text(
@@ -55,7 +59,7 @@ class OnBoardingPage extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
-                      AppSizes.v400,
+                      AppSizes.w400,
                       AppSizes.v48,
                     ),
                     backgroundColor: AppColors.blue,
@@ -84,7 +88,7 @@ class OnBoardingPage extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
-                      AppSizes.v400,
+                      AppSizes.w400,
                       AppSizes.v48,
                     ),
                     backgroundColor: AppColors.white,

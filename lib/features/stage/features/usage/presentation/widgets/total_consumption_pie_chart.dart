@@ -27,7 +27,7 @@ class TotalConsumptionPieChart extends StatelessWidget {
     return Container(
       color: AppColors.white,
       margin: EdgeInsets.symmetric(
-        vertical: AppSizes.width_8,
+        vertical: AppSizes.w8,
       ),
       padding: EdgeInsets.all(
         AppSizes.w16,
@@ -73,9 +73,9 @@ class TotalConsumptionPieChart extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(
-              AppSizes.width_12,
-              AppSizes.width_12,
-              AppSizes.width_12,
+              AppSizes.w12,
+              AppSizes.w12,
+              AppSizes.w12,
               0,
             ),
             child: Row(
@@ -87,8 +87,8 @@ class TotalConsumptionPieChart extends StatelessWidget {
                   return Row(
                     children: [
                       Container(
-                        height: AppSizes.width_12,
-                        width: AppSizes.width_12,
+                        height: AppSizes.w12,
+                        width: AppSizes.w12,
                         margin: EdgeInsets.only(
                           right: AppSizes.w4,
                         ),

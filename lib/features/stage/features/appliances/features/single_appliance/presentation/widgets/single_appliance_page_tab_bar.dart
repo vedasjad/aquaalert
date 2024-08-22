@@ -17,7 +17,7 @@ class SingleAppliancePageTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        vertical: AppSizes.width_8,
+        vertical: AppSizes.w8,
       ),
       color: AppColors.white,
       child: TabBar(

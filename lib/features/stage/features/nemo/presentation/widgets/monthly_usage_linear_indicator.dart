@@ -21,7 +21,7 @@ class MonthlyUsageLinearIndicator extends StatelessWidget {
             Text(
               ltrsPerDay,
               style: AppTextStyles.extraLargeBold.copyWith(
-                fontSize: AppSizes.fontSize_40,
+                fontSize: AppSizes.f40,
               ),
             ),
             SizedBox(
@@ -49,7 +49,7 @@ class MonthlyUsageLinearIndicator extends StatelessWidget {
           animationDuration: 400,
           percent: 0.8,
           barRadius: Radius.circular(
-            AppSizes.radius_22,
+            AppSizes.r22,
           ),
           padding: EdgeInsets.zero,
           progressColor: AppColors.blue,

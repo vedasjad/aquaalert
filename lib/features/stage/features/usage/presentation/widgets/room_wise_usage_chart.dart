@@ -31,7 +31,7 @@ class RoomWiseUsageChart extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(
-              AppSizes.width_12,
+              AppSizes.w12,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,7 +59,7 @@ class RoomWiseUsageChart extends StatelessWidget {
             padding: EdgeInsets.all(
               AppSizes.w4,
             ),
-            height: AppSizes.width_100,
+            height: AppSizes.w100,
             width: AppSizes.getScreenWidth() * 0.95,
             alignment: Alignment.center,
             child: BarChart(
@@ -130,7 +130,7 @@ class RoomWiseUsageChart extends StatelessWidget {
                     getTooltipColor: (spot) {
                       return AppColors.white;
                     },
-                    tooltipRoundedRadius: AppSizes.width_8,
+                    tooltipRoundedRadius: AppSizes.w8,
                     getTooltipItem: (
                       groupData,
                       groupIndex,
@@ -174,7 +174,7 @@ class RoomWiseUsageChart extends StatelessWidget {
             BarChartRodData(
               toY: point.y.toDouble(),
               color: sector.color,
-              width: AppSizes.width_12,
+              width: AppSizes.w12,
               borderRadius: BorderRadius.zero,
             ),
           ],

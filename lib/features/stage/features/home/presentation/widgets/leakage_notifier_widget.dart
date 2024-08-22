@@ -16,19 +16,19 @@ class LeakageNotifierWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: AppSizes.height_64,
+        height: AppSizes.h64,
         width: AppSizes.getScreenWidth() * 0.95,
         decoration: BoxDecoration(
           color: AppColors.redLight,
           border: BorderDirectional(
             start: BorderSide(
               color: AppColors.red,
-              width: AppSizes.width_6,
+              width: AppSizes.w6,
             ),
           ),
         ),
         padding: EdgeInsets.all(
-          AppSizes.width_8,
+          AppSizes.w8,
         ),
         margin: EdgeInsets.all(
           AppSizes.w4,

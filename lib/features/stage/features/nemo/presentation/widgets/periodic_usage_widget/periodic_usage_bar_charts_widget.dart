@@ -25,15 +25,15 @@ class PeriodicUsageBarChartsWidget extends StatelessWidget {
         width: AppSizes.getScreenWidth() * 0.85,
         height: AppSizes.getScreenWidth() * 0.8,
         padding: EdgeInsets.all(
-          AppSizes.width_22,
+          AppSizes.w22,
         ),
         margin: EdgeInsets.symmetric(
-          vertical: AppSizes.width_8,
+          vertical: AppSizes.w8,
         ),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(
-            AppSizes.radius_14,
+            AppSizes.r14,
           ),
         ),
         child: Column(
@@ -54,7 +54,7 @@ class PeriodicUsageBarChartsWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSizes.width_8,
+                    horizontal: AppSizes.w8,
                   ),
                   child: Text(
                     formatMonthFromDateTime(controller.pageOffset.value < 6

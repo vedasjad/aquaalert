@@ -19,10 +19,10 @@ class WaterFlowWidget extends StatelessWidget {
             width: AppSizes.getScreenWidth(),
             color: AppColors.white,
             margin: EdgeInsets.symmetric(
-              vertical: AppSizes.width_8,
+              vertical: AppSizes.w8,
             ),
             padding: EdgeInsets.symmetric(
-              vertical: AppSizes.width_14,
+              vertical: AppSizes.w14,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +30,7 @@ class WaterFlowWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSizes.width_14,
+                    horizontal: AppSizes.w14,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,20 +45,20 @@ class WaterFlowWidget extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(
-                            AppSizes.radius_20,
+                            AppSizes.r20,
                           ),
                           color: AppColors.blueLight,
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: AppSizes.width_8,
+                          horizontal: AppSizes.w8,
                           vertical: AppSizes.w4,
                         ),
                         child: Row(
                           children: [
                             Image.asset(
                               AppIcons.drop,
-                              height: AppSizes.width_12,
-                              width: AppSizes.width_12,
+                              height: AppSizes.w12,
+                              width: AppSizes.w12,
                               fit: BoxFit.contain,
                             ),
                             SizedBox(
@@ -79,7 +79,7 @@ class WaterFlowWidget extends StatelessWidget {
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(
-                        vertical: AppSizes.height_8,
+                        vertical: AppSizes.h8,
                       ),
                       height: AppSizes.v90,
                       width: AppSizes.w180,
@@ -158,7 +158,7 @@ class WaterFlowWidget extends StatelessWidget {
             width: AppSizes.getScreenWidth() / 2.05,
             color: AppColors.white,
             padding: EdgeInsets.symmetric(
-              vertical: AppSizes.width_14,
+              vertical: AppSizes.w14,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +166,7 @@ class WaterFlowWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSizes.width_14,
+                    horizontal: AppSizes.w14,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,20 +181,20 @@ class WaterFlowWidget extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(
-                            AppSizes.radius_20,
+                            AppSizes.r20,
                           ),
                           color: AppColors.blueLight,
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: AppSizes.width_8,
+                          horizontal: AppSizes.w8,
                           vertical: AppSizes.w4,
                         ),
                         child: Row(
                           children: [
                             Image.asset(
                               AppIcons.drop,
-                              height: AppSizes.width_12,
-                              width: AppSizes.width_12,
+                              height: AppSizes.w12,
+                              width: AppSizes.w12,
                               fit: BoxFit.contain,
                             ),
                           ],
@@ -205,7 +205,7 @@ class WaterFlowWidget extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(
-                    vertical: AppSizes.height_12,
+                    vertical: AppSizes.h12,
                   ),
                   height: AppSizes.w90,
                   width: AppSizes.w180,
@@ -268,7 +268,7 @@ class WaterFlowWidget extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: AppSizes.width_8,
+                      horizontal: AppSizes.w8,
                     ),
                     child: Text(
                       AppStrings.highWaterFlowTip,

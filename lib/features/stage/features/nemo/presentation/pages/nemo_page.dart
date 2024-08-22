@@ -165,7 +165,7 @@ class NemoPage extends StatelessWidget {
       //       ),
       //       Padding(
       //         padding: EdgeInsets.symmetric(
-      //           horizontal: AppSizes.width_30,
+      //           horizontal: AppSizes.w30,
       //         ),
       //         child: Row(
       //           mainAxisAlignment: MainAxisAlignment.start,
@@ -178,7 +178,7 @@ class NemoPage extends StatelessWidget {
       //                   style: AppTextStyles.extraLargeRegular,
       //                 ),
       //                 SizedBox(
-      //                   height: AppSizes.height_4,
+      //                   height: AppSizes.h4,
       //                 ),
       //                 SizedBox(
       //                   width: AppSizes.getScreenWidth() * 0.75,
@@ -195,7 +195,7 @@ class NemoPage extends StatelessWidget {
       //                       ltrsPerDay: '226',
       //                     ),
       //                     SizedBox(
-      //                       width: AppSizes.width_46,
+      //                       width: AppSizes.w46,
       //                     ),
       //                     Container(
       //                       padding: EdgeInsets.symmetric(
@@ -234,14 +234,14 @@ class NemoPage extends StatelessWidget {
       //                   isPrevMonth: true,
       //                 ),
       //                 Container(
-      //                   margin: EdgeInsets.only(top: AppSizes.width_8),
+      //                   margin: EdgeInsets.only(top: AppSizes.w8),
       //                   padding: EdgeInsets.all(
-      //                     AppSizes.width_8,
+      //                     AppSizes.w8,
       //                   ),
       //                   decoration: BoxDecoration(
       //                     color: AppColors.gunMetal,
       //                     borderRadius: BorderRadius.circular(
-      //                       AppSizes.radius_6,
+      //                       AppSizes.r6,
       //                     ),
       //                   ),
       //                   child: Row(
@@ -267,8 +267,8 @@ class NemoPage extends StatelessWidget {
       //                       Row(
       //                         children: List.generate(19, (index) {
       //                           return Container(
-      //                             height: AppSizes.width_12,
-      //                             width: AppSizes.width_3,
+      //                             height: AppSizes.w12,
+      //                             width: AppSizes.w3,
       //                             margin: EdgeInsets.symmetric(
       //                               horizontal: AppSizes.w2,
       //                             ),
@@ -279,7 +279,7 @@ class NemoPage extends StatelessWidget {
       //                                       ? AppColors.white2
       //                                       : AppColors.lightSeaGreen,
       //                               borderRadius: BorderRadius.circular(
-      //                                 AppSizes.radius_2,
+      //                                 AppSizes.r2,
       //                               ),
       //                             ),
       //                           );

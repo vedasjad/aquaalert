@@ -23,7 +23,7 @@ class ProfilePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(
-          AppSizes.width_14,
+          AppSizes.w14,
         ),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -32,9 +32,9 @@ class ApplianceTile extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              height: AppSizes.width_70,
+              height: AppSizes.w70,
               margin: EdgeInsets.only(
-                top: AppSizes.width_12,
+                top: AppSizes.w12,
               ),
               decoration: BoxDecoration(
                 color: AppColors.offWhite,
@@ -50,8 +50,8 @@ class ApplianceTile extends StatelessWidget {
               alignment: Alignment.center,
               child: Image.asset(
                 operationalAppliance.appliance.iconPath,
-                width: AppSizes.width_42,
-                height: AppSizes.width_32,
+                width: AppSizes.w42,
+                height: AppSizes.w32,
                 fit: BoxFit.contain,
               ),
             ),
@@ -59,13 +59,13 @@ class ApplianceTile extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              height: AppSizes.width_70,
+              height: AppSizes.w70,
               margin: EdgeInsets.only(
-                top: AppSizes.width_12,
+                top: AppSizes.w12,
                 left: AppSizes.w2,
               ),
               padding: EdgeInsets.all(
-                AppSizes.width_12,
+                AppSizes.w12,
               ),
               decoration: BoxDecoration(
                 color: AppColors.offWhite,
@@ -92,8 +92,8 @@ class ApplianceTile extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            height: AppSizes.width_6,
-                            width: AppSizes.width_6,
+                            height: AppSizes.w6,
+                            width: AppSizes.w6,
                             margin: EdgeInsets.only(
                               right: AppSizes.w4,
                             ),

@@ -17,12 +17,12 @@ class ProfileSettingTile extends StatelessWidget {
     return Container(
       color: AppColors.white,
       padding: EdgeInsets.symmetric(
-        vertical: AppSizes.width_8,
+        vertical: AppSizes.w8,
       ),
       child: ListTile(
         leading: Container(
-          height: AppSizes.width_40,
-          width: AppSizes.width_40,
+          height: AppSizes.w40,
+          width: AppSizes.w40,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: AppColors.offWhite,
@@ -47,8 +47,8 @@ class ProfileSettingTile extends StatelessWidget {
                 top: AppSizes.w4,
                 child: Image.asset(
                   AppIcons.warning,
-                  height: AppSizes.width_14,
-                  width: AppSizes.width_14,
+                  height: AppSizes.w14,
+                  width: AppSizes.w14,
                   fit: BoxFit.contain,
                 ),
               ),

@@ -70,13 +70,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
           Positioned(
             bottom: AppSizes.w24,
             left: MediaQuery.of(context).size.width / 2 -
-                AppSizes.width_22, // Adjust to center
+                AppSizes.w22, // Adjust to center
             child: GestureDetector(
               onTap: () => controller.updateSelectedBNBIndex(2),
               child: Image.asset(
                 AppIcons.hydraActive,
-                height: AppSizes.width_44,
-                width: AppSizes.width_44,
+                height: AppSizes.w44,
+                width: AppSizes.w44,
                 fit: BoxFit.contain,
               ),
             ),

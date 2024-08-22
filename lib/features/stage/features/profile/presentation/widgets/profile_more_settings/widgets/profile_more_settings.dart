@@ -1,5 +1,4 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
-
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class ProfileMoreSettings extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: AppSizes.width_8,
+          height: AppSizes.w8,
         ),
         Column(
           children: [

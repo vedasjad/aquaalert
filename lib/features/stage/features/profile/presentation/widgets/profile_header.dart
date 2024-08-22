@@ -34,18 +34,18 @@ class ProfileHeader extends StatelessWidget {
               shape: BoxShape.circle,
               border: Border.all(
                 color: AppColors.white2,
-                width: AppSizes.radius_2,
+                width: AppSizes.r2,
               ),
             ),
             child: Image.asset(
               AppIcons.person,
-              height: AppSizes.width_54,
-              width: AppSizes.width_54,
+              height: AppSizes.w54,
+              width: AppSizes.w54,
               fit: BoxFit.contain,
             ),
           ),
           SizedBox(
-            width: AppSizes.width_12,
+            width: AppSizes.w12,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

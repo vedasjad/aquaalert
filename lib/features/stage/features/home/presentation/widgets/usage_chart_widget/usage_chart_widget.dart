@@ -39,7 +39,7 @@ class UsageChartWidget extends StatelessWidget {
       return Container(
         width: AppSizes.getScreenWidth(),
         margin: EdgeInsets.symmetric(
-          vertical: AppSizes.width_8,
+          vertical: AppSizes.w8,
         ),
         padding: EdgeInsets.symmetric(
           vertical: AppSizes.w16,
@@ -57,7 +57,7 @@ class UsageChartWidget extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: AppSizes.height_8,
+              height: AppSizes.h8,
             ),
             Container(
               width: AppSizes.getScreenWidth() * 0.9,
@@ -95,7 +95,7 @@ class UsageChartWidget extends StatelessWidget {
                         sideTitles: SideTitles(
                           showTitles: true,
                           interval: 6,
-                          reservedSize: AppSizes.width_22,
+                          reservedSize: AppSizes.w22,
                           getTitlesWidget: (value, meta) {
                             if (isHourly) {
                               return getTitlesWidget(
@@ -129,7 +129,7 @@ class UsageChartWidget extends StatelessWidget {
                       leftTitles: AxisTitles(
                         sideTitles: SideTitles(
                           showTitles: true,
-                          reservedSize: AppSizes.width_32,
+                          reservedSize: AppSizes.w32,
                           interval: 2,
                           getTitlesWidget: (value, meta) {
                             if (isHourly) {
@@ -196,7 +196,7 @@ class UsageChartWidget extends StatelessWidget {
                         getTooltipColor: (spot) {
                           return AppColors.white;
                         },
-                        tooltipRoundedRadius: AppSizes.width_8,
+                        tooltipRoundedRadius: AppSizes.w8,
                         getTooltipItems: (List<LineBarSpot> touchedSpots) {
                           return touchedSpots.map((LineBarSpot touchedSpot) {
                             return LineTooltipItem(

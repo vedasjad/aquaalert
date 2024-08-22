@@ -122,8 +122,7 @@ class _FillOTPPageState extends State<FillOTPPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: AppSizes.value8),
+                          padding: EdgeInsets.symmetric(vertical: AppSizes.v8),
                           alignment: Alignment.centerLeft,
                           child: OtpTextField(
                             borderColor: AppColors.greyNeutral,
@@ -147,7 +146,7 @@ class _FillOTPPageState extends State<FillOTPPage> {
                       ],
                     ),
                     Text(
-                      "Didn\'t receive the SMS?",
+                      "Didn't receive the SMS?",
                       style: AppTextStyles.smallRegular.copyWith(
                         height: 1.5,
                         letterSpacing: 0.14,

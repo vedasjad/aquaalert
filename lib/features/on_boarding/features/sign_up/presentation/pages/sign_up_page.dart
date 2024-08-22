@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   AppGaps.w10,
                   Image.asset(
-                    AppImages.a,
+                    AppImages.aquaAlertLogo,
                     height: AppSizes.w75,
                     width: AppSizes.w75,
                     fit: BoxFit.contain,
@@ -78,7 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
               const Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(() => FillOTPPage());
+                  Get.to(() => const FillOTPPage());
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(

@@ -16,7 +16,7 @@ class AppliancesIndoorTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(
-        AppSizes.width_12,
+        AppSizes.w12,
       ),
       color: AppColors.white,
       child: Column(
@@ -50,7 +50,7 @@ class AppliancesIndoorTab extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                   SizedBox(
-                    width: AppSizes.width_8,
+                    width: AppSizes.w8,
                   ),
                   Image.asset(
                     AppIcons.grid,

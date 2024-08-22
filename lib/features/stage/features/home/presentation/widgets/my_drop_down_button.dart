@@ -22,7 +22,7 @@ class MyDropDownButton extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(
-          right: AppSizes.width_8,
+          right: AppSizes.w8,
         ),
         child: Row(
           children: [
@@ -39,7 +39,7 @@ class MyDropDownButton extends StatelessWidget {
             Icon(
               Icons.keyboard_arrow_down,
               color: AppColors.greyDavy,
-              size: AppSizes.fontSize_26,
+              size: AppSizes.f26,
             )
           ],
         ),
@@ -60,7 +60,7 @@ class MyDropDownButton extends StatelessWidget {
         ),
         constraints: BoxConstraints(
           maxHeight: options.length * AppSizes.w102,
-          minHeight: AppSizes.width_100,
+          minHeight: AppSizes.w100,
           maxWidth: Get.width,
           minWidth: Get.width,
         ),
@@ -81,8 +81,7 @@ class MyDropDownButton extends StatelessWidget {
                       : Colors.transparent,
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSizes.w20,
-                    vertical:
-                        isSelected == true ? AppSizes.w20 : AppSizes.width_12,
+                    vertical: isSelected == true ? AppSizes.w20 : AppSizes.w12,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +94,7 @@ class MyDropDownButton extends StatelessWidget {
                         Icon(
                           Icons.check,
                           color: AppColors.blue,
-                          size: AppSizes.width_30,
+                          size: AppSizes.w30,
                         )
                     ],
                   ),

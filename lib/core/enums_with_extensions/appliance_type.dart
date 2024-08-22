@@ -47,7 +47,7 @@ extension ApplianceTypeExtension on ApplianceType {
       case ApplianceType.poolAutoFill:
         return 'Pool (Auto Fill)';
       default:
-        return '';
+        return 'New Appliance';
     }
   }
 }
