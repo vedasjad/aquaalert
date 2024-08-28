@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../../core/resources/app_resources.dart';
 import '../../../../../../../core/resources/resources.dart';
-import '../../../domain/models/appliance_info.dart';
+import '../../../domain/entities/operational_appliance.dart';
 
-class AppliancesIndoorTab extends StatelessWidget {
-  const AppliancesIndoorTab({
+class AppliancesListTab extends StatelessWidget {
+  const AppliancesListTab({
     required this.appliancesInfo,
+    required this.onAddAppliance,
     super.key,
   });
   final List<OperationalAppliance> appliancesInfo;
+  final VoidCallback onAddAppliance;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class AppliancesIndoorTab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
+                onTap: onAddAppliance,
                 child: Row(
                   children: [
                     Icon(

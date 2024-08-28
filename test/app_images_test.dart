@@ -7,6 +7,7 @@ void main() {
   test('app_images assets test', () {
     expect(File(AppImages.aquaAlertLogo).existsSync(), isTrue);
     expect(File(AppImages.aquaAlertTitle).existsSync(), isTrue);
+    expect(File(AppImages.scanQr).existsSync(), isTrue);
     expect(File(AppImages.white).existsSync(), isTrue);
   });
 }

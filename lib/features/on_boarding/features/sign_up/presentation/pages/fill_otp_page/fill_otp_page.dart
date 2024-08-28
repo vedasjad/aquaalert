@@ -138,7 +138,7 @@ class _FillOTPPageState extends State<FillOTPPage> {
                             onCodeChanged: (String code) {},
                             onSubmit: (String verificationCode) {
                               if (agreeToPrivacy && agreeToDataProcessing) {
-                                Get.to(const LocationSetupPage());
+                                Get.to(() => const LocationSetupPage());
                               }
                             }, // end onSubmit
                           ),
@@ -195,7 +195,7 @@ class _FillOTPPageState extends State<FillOTPPage> {
                     ElevatedButton(
                       onPressed: agreeToPrivacy && agreeToDataProcessing
                           ? () {
-                              Get.to(const LocationSetupPage());
+                              Get.to(() => const LocationSetupPage());
                             }
                           : null,
                       style: ElevatedButton.styleFrom(

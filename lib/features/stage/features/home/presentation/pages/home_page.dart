@@ -1,8 +1,8 @@
+import 'package:aquaalert/core/entities/appliances/appliance.dart';
 import 'package:aquaalert/core/enums_with_extensions/appliance_type.dart';
-import 'package:aquaalert/core/models/appliances/appliance.dart';
 import 'package:aquaalert/core/resources/app_resources.dart';
-import 'package:aquaalert/features/stage/features/appliances/domain/models/appliance_info.dart';
-import 'package:aquaalert/features/stage/features/appliances/domain/models/leakage.dart';
+import 'package:aquaalert/features/stage/features/appliances/domain/entities/leakage.dart';
+import 'package:aquaalert/features/stage/features/appliances/domain/entities/operational_appliance.dart';
 import 'package:aquaalert/features/stage/features/appliances/features/single_appliance/presentation/bindings/single_appliance_binding.dart';
 import 'package:aquaalert/features/stage/features/appliances/features/single_appliance/presentation/pages/single_appliance_page.dart';
 import 'package:aquaalert/features/stage/features/home/presentation/controllers/home_controller.dart';
@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 import '../../../../../../core/resources/resources.dart';
 import '../../../../presentation/widgets/notification_icon_widget.dart';
+import '../../../appliances/domain/entities/appliance_status.dart';
 import '../widgets/leakage_notifier_widget.dart';
 import '../widgets/usage_chart_widget/usage_chart_widget.dart';
 import '../widgets/water_flow_widget.dart';
@@ -52,6 +53,8 @@ class HomePage extends StatelessWidget {
                         isIndoor: true,
                         applianceType: ApplianceType.tap,
                       ),
+                      ipAddress: '127.98.67.89',
+                      id: 'indoor2',
                     ),
                   ),
                   binding: SingleApplianceBinding(),

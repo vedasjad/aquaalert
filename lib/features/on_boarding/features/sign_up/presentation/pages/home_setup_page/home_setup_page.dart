@@ -1,4 +1,5 @@
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/bindings/appliances_setup_page/appliances_setup_page_binding.dart';
+import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/add_main_controller_page/add_main_controller_page.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/pages/appliances_setup_page/appliances_setup_page.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../../../../../../core/resources/app_resources.dart';
 import '../../../../../../../core/resources/resources.dart';
+import '../../bindings/add_main_controller_page/add_main_controller_page_binding.dart';
 import '../../widgets/home_setup_page/decrease_count_button.dart';
 import '../../widgets/home_setup_page/increase_count_button.dart';
 
@@ -13,7 +15,7 @@ class HomeSetupPage extends StatefulWidget {
   const HomeSetupPage({super.key});
 
   @override
-  _HomeSetupPageState createState() => _HomeSetupPageState();
+  State<HomeSetupPage> createState() => _HomeSetupPageState();
 }
 
 class _HomeSetupPageState extends State<HomeSetupPage> {
@@ -182,19 +184,21 @@ class _HomeSetupPageState extends State<HomeSetupPage> {
                             ),
                           ),
                           AppGaps.w20,
-                          IncreaseCountButton(onTap: () {
-                            setState(() {
-                              numberOfBathrooms++;
-                            });
-                          }),
+                          IncreaseCountButton(
+                            onTap: () {
+                              setState(() {
+                                numberOfBathrooms++;
+                              });
+                            },
+                          ),
                         ],
                       ),
                       const Spacer(),
                       ElevatedButton(
                         onPressed: () {
                           Get.to(
-                            () => const AppliancesSetupPage(),
-                            binding: AppliancesSetupPageBinding(),
+                            () => const AddMainControllerPage(),
+                            binding: AddMainControllerPageBinding(),
                           );
                         },
                         style: ElevatedButton.styleFrom(

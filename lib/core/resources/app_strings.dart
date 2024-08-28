@@ -85,6 +85,7 @@ class AppStrings {
   static const pinCode = "PinCode";
   static const next = "Next";
   static const skip = "Skip";
+  static const scanQROnController = 'Scan QR on Controller';
   static const tellUsAboutYourHome = "Tell us about your home";
   static const tellUsAboutYourHomeDescription =
       "Help us understand your home to optimize your water usage.";
@@ -94,6 +95,9 @@ class AppStrings {
   static const yourHomeAppliances = 'Your home appliances';
   static const yourHomeAppliancesDescription =
       'Select the appliances you use to track water usage accurately.';
+  static const addMainController = 'Add Main Controller';
+  static const addMainControllerDescription =
+      'It\'ll be the central controller for all the devices that will be connected in future.';
   static const hourly = "Hourly";
   static const submit = "Submit";
 }

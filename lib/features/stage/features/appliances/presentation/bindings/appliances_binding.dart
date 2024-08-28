@@ -5,7 +5,9 @@ class AppliancesBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(
-      () => AppliancesController(),
+      () => AppliancesController(
+        navigationHandler: Get.find(),
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:aquaalert/app/routes/app_routes.dart';
-import 'package:aquaalert/core/models/appliances/appliance.dart';
+import 'package:aquaalert/core/entities/appliances/appliance.dart';
 import 'package:aquaalert/core/utils/logger.dart';
 import 'package:aquaalert/features/on_boarding/features/sign_up/presentation/controllers/appliances_setup_page/appliances_setup_page_controller.dart';
 import 'package:flutter/material.dart';

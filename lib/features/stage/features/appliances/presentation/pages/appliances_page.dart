@@ -1,6 +1,6 @@
 import 'package:aquaalert/core/resources/resources.dart';
 import 'package:aquaalert/features/stage/features/appliances/presentation/controllers/appliances_controller.dart';
-import 'package:aquaalert/features/stage/features/appliances/presentation/pages/tabs/appliances_indoor_tab.dart';
+import 'package:aquaalert/features/stage/features/appliances/presentation/pages/tabs/appliances_list_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,6 +28,9 @@ class _AppliancesPageState extends State<AppliancesPage>
       length: controller.tabsTitle.length,
       vsync: this,
     );
+    tabController.addListener(() {
+      controller.updateCurrentTabIndex(tabController.index);
+    });
     super.initState();
   }
 
@@ -62,16 +65,22 @@ class _AppliancesPageState extends State<AppliancesPage>
             SizedBox(
               width: AppSizes.getScreenWidth(),
               height: AppSizes.getScreenHeight() - kBottomNavigationBarHeight,
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  AppliancesIndoorTab(
-                    appliancesInfo: controller.indoorOperationalAppliances,
-                  ),
-                  AppliancesIndoorTab(
-                    appliancesInfo: controller.outdoorOperationalAppliances,
-                  ),
-                ],
+              child: GetBuilder<AppliancesController>(
+                builder: (controller) {
+                  return TabBarView(
+                    controller: tabController,
+                    children: [
+                      AppliancesListTab(
+                        appliancesInfo: controller.indoorOperationalAppliances,
+                        onAddAppliance: controller.addAppliance,
+                      ),
+                      AppliancesListTab(
+                        appliancesInfo: controller.outdoorOperationalAppliances,
+                        onAddAppliance: controller.addAppliance,
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
           ],

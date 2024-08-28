@@ -1,5 +1,6 @@
 import 'package:aquaalert/app/configs/app_config.dart';
 import 'package:aquaalert/features/stage/features/appliances/appliances_module.dart';
+import 'package:aquaalert/features/stage/features/appliances/features/add_appliance/add_appliance_module.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ void main() {
 
   OnBoardingModule().init();
   AppliancesModule().init();
+  AddAppliancesModule().init();
 
   runApp(const MyApp());
 }

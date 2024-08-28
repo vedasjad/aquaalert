@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../../../../core/resources/app_resources.dart';
 import '../../../../../../core/resources/resources.dart';
 import '../../../../../../core/utils/date_time_helpers.dart';
-import '../../domain/models/appliance_info.dart';
+import '../../domain/entities/operational_appliance.dart';
 import '../../features/single_appliance/presentation/pages/single_appliance_page.dart';
 
 class ApplianceTile extends StatelessWidget {

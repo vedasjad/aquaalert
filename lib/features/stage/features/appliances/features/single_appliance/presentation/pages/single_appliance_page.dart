@@ -1,4 +1,4 @@
-import 'package:aquaalert/features/stage/features/appliances/domain/models/appliance_info.dart';
+import 'package:aquaalert/features/stage/features/appliances/domain/entities/operational_appliance.dart';
 import 'package:aquaalert/features/stage/features/appliances/features/single_appliance/presentation/controllers/single_appliance_controller.dart';
 import 'package:aquaalert/features/stage/features/appliances/features/single_appliance/presentation/pages/tabs/alerts_tab.dart';
 import 'package:aquaalert/features/stage/features/appliances/features/single_appliance/presentation/pages/tabs/usage_statistics_tab.dart';

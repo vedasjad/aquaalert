@@ -1,6 +1,6 @@
 import 'package:aquaalert/core/resources/app_resources.dart';
 import 'package:aquaalert/core/utils/date_time_helpers.dart';
-import 'package:aquaalert/features/stage/features/appliances/domain/models/leakage.dart';
+import 'package:aquaalert/features/stage/features/appliances/domain/entities/leakage.dart';
 import 'package:flutter/material.dart';
 
 class LeakageNotifierWidget extends StatelessWidget {

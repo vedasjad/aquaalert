@@ -16,6 +16,7 @@ class AppIcons {
   static const String drop = 'assets/icons/drop.png';
   static const String filter = 'assets/icons/filter.png';
   static const String gps = 'assets/icons/gps.png';
+  static const String greenTick = 'assets/icons/green_tick.png';
   static const String grid = 'assets/icons/grid.png';
   static const String heartRounded = 'assets/icons/heart_rounded.png';
   static const String homeActive = 'assets/icons/home_active.png';

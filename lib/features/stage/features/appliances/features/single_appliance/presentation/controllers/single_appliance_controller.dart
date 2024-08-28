@@ -2,7 +2,7 @@ import 'package:aquaalert/core/models/tabs/my_tab.dart';
 import 'package:get/get.dart';
 
 import '../../../../../../../../core/resources/app_resources.dart';
-import '../../../../domain/models/leakage.dart';
+import '../../../../domain/entities/leakage.dart';
 
 class SingleApplianceController extends GetxController
     with GetSingleTickerProviderStateMixin {

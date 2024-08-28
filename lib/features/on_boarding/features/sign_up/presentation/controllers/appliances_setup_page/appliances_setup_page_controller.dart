@@ -2,7 +2,7 @@ import 'package:aquaalert/core/enums_with_extensions/appliance_type.dart';
 import 'package:aquaalert/core/models/tabs/my_tab.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../../core/models/appliances/appliance.dart';
+import '../../../../../../../core/entities/appliances/appliance.dart';
 import '../../../../../../../core/resources/app_resources.dart';
 
 class AppliancesSetupPageController extends GetxController
